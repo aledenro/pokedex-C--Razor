@@ -2,45 +2,34 @@
 @model PokedexWeb.Pages.Views.LoginModel
 @{
 
-    <main id="login">
-        <div class="d-flex align-items-center min-vh-100 bg-auth">
-            <div class="container">
-                <div class="align-items-center row">
-                    <div class="offset-xl-2 offset-md-1 order-md-2 mb-5 mb-md-0 col-md-6 col-12">
-                        <div class="text-center container rotomdex" id="rotomdex">
-                            <img class="img-fluid" src="https://wallpapercave.com/wp/wp3170173.png">
-                            <div class="centered"><h4>Bienvenido a PokedexWeb</h4></div>  
+    <main id="login" class="container">
+        <div class="d-flex align-items-center">
+            <div id="dialogbox" class="row">
+                <div class="col-10 p-3 mx-auto">
+                    <h1 class="mb-3">Iniciar Sesion</h1>
+                    <form class="m-2 needs-validation" method="post">
+                        <div class="form-group text-start">
+                            <label class="form-label text-start">Correo Electrónico</label>
+                            <input placeholder="name@address.com" type="email" class="form-control">
                         </div>
-                    </div>
-                    <div class="order-md-1 my-5 col-xl-4 col-md-5 col-12">
-                        <h1 class="display-4 mb-3">Sign in</h1>
-                        <form>
-                            <div class="form-group">
-                                <label class="form-label text-start">Email Address</label>
-                                <input placeholder="name@address.com" type="email" class="form-control">
+                        <div class="form-group text-start mt-2">
+                            <label class="form-label">Contraseña</label>
+                            <input placeholder="Ingresa tú contraseña" type="password" class="form-control">
+
+                            <div class="col-auto text-end mt-2">
+                                <a class="small text-body-secondary form-text text-end" href="/password-reset">Olvidaste tu contraseña?</a>
                             </div>
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col">
-                                        <label class="form-label text-start">Password</label>
-                                    </div>
-                                    <div class="col-auto">
-                                        <a class="small text-body-secondary form-text text-end" href="/password-reset">Forgot password?</a>
-                                    </div>
-                                </div>
-                                <div class="input-group-merge input-group">
-                                    <input placeholder="Enter your password" type="password" class="form-control">
-                                    <span class="input-group-text"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye "><g><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></g></svg></span>
-                                </div>
-                            </div>
-                            <button type="button" class="w-100 my-3 btn btn-primary">Sign in</button>
-                            <p class="text-center"><small class="text-body-secondary text-center">Don't have an account yet? <a href="/sign-up">Sign up</a>.</small></p>
-                        </form>
-                    </div>
+                        </div>
+                        <button type="button" class="w-100 my-3 btn btn-primary">Entrar</button>
+                        <p class="text-center"><small class="text-body-secondary text-center">Aún no tienes una cuenta? <a href="/Views/Registro">Regístrate</a>.</small></p>
+
+                    </form>
                 </div>
+
             </div>
         </div>
-
+        
 
     </main>
+
 }

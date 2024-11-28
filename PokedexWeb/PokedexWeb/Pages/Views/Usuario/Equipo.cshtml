@@ -1,11 +1,11 @@
 ﻿@page
-@model PokedexWeb.Pages.Views.Pokemon.IndexModel
+@model PokedexWeb.Pages.Views.Usuario.EquipoModel
 @{
     <main class="content mx-sm-2">
         <div class="container-fluid p-0">
             <div class="col-lg-8 col-md-10 mx-auto">
 
-                <h1 class="text-center my-4">Pokedex</h1>
+                <h1 class="text-center my-4">Mis Pokemon</h1>
 
                 <div class="row">
                     <div class="md-auto">
@@ -21,6 +21,7 @@
                                         <th>Tipos</th>
                                         <th>Debilidad</th>
                                         <th>Peso</th>
+                                        <th>Equipo</th>
                                         <th>Acciones</th>
                                     </tr>
                                 </thead>
@@ -55,8 +56,14 @@
                                         </td>
                                         <td>6.9 kg</td>
                                         <td>
-                                            <a href="/Views/Pokemon/Editar"><i class="fa-solid fa-pen"></i></a>
-                                            <a href="/Views/Pokemon/Eliminar"><i class="fa-solid fa-trash"></i></a>
+                                            <p>
+                                                <span class="badge text-bg-success rounded-pill" id="planta">Si</span>
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <a class="mx-1" href=""><i class="fa-solid fa-plus"></i></a>
+                                            <a class="mx-1" href="/Views/Pokemon/Editar"><i class="fa-solid fa-pen"></i></a>
+                                            <a class="mx-1" href="/Views/Pokemon/Eliminar"><i class="fa-solid fa-trash"></i></a>
                                         </td>
                                     </tr>
                                 </tbody>

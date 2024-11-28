@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\valer\\OneDrive\\Desktop\\5progra\\Proyecto\\PokedexWeb\\PokedexWeb\\PokedexWeb.csproj": {}
+    "C:\\Users\\valer\\OneDrive\\Desktop\\5progra\\Proyecto_PrograWeb\\PokedexWeb\\PokedexWeb\\PokedexWeb.csproj": {}
   },
   "projects": {
-    "C:\\Users\\valer\\OneDrive\\Desktop\\5progra\\Proyecto\\PokedexWeb\\PokedexWeb\\PokedexWeb.csproj": {
+    "C:\\Users\\valer\\OneDrive\\Desktop\\5progra\\Proyecto_PrograWeb\\PokedexWeb\\PokedexWeb\\PokedexWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\valer\\OneDrive\\Desktop\\5progra\\Proyecto\\PokedexWeb\\PokedexWeb\\PokedexWeb.csproj",
+        "projectUniqueName": "C:\\Users\\valer\\OneDrive\\Desktop\\5progra\\Proyecto_PrograWeb\\PokedexWeb\\PokedexWeb\\PokedexWeb.csproj",
         "projectName": "PokedexWeb",
-        "projectPath": "C:\\Users\\valer\\OneDrive\\Desktop\\5progra\\Proyecto\\PokedexWeb\\PokedexWeb\\PokedexWeb.csproj",
+        "projectPath": "C:\\Users\\valer\\OneDrive\\Desktop\\5progra\\Proyecto_PrograWeb\\PokedexWeb\\PokedexWeb\\PokedexWeb.csproj",
         "packagesPath": "C:\\Users\\valer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\valer\\OneDrive\\Desktop\\5progra\\Proyecto\\PokedexWeb\\PokedexWeb\\obj\\",
+        "outputPath": "C:\\Users\\valer\\OneDrive\\Desktop\\5progra\\Proyecto_PrograWeb\\PokedexWeb\\PokedexWeb\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\valer\\AppData\\Roaming\\NuGet\\NuGet.Config",

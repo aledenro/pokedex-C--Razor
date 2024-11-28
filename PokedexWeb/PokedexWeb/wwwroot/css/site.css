@@ -1,6 +1,5 @@
 html {
-  font-size: 14px;
-  
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
@@ -82,15 +81,33 @@ h1, h2, h3 {
     top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-family: "Silkscreen", sans-serif;
+    font-family: "Silkscreen", sans-serif !important;
+    font-size: 1.5rem;
 }
 
-.rotomdex {
-    font-family: "Russo One", sans-serif;
-    font-weight: 400;
+
+@media (min-width: 992px) {
+   .centered {
+        font-size: 2rem;
+    }
 }
 
-/*#login {
-    background-color: #e84b44;
 
-}*/
+#login {
+    min-height: 100vh;
+/*    background-color: #e84b44;*/
+    display: flex;
+    justify-content: center; /* Centers the content vertically */
+    padding-top: 0px;
+}
+
+#dialogbox {
+    border-radius: 2px;
+    padding: 20px;
+    line-height: 16px;
+    margin: auto;
+    height: auto;
+    background: white;
+    border: 2px solid white;
+    box-shadow: 0 2px 0 2px black, inset 0 2px 0 2px black, 0 0 0 2px black, inset 0 0 0 2px black;
+}
