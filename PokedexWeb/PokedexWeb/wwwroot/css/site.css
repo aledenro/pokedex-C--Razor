@@ -95,9 +95,8 @@ h1, h2, h3 {
 
 #login {
     min-height: 100vh;
-/*    background-color: #e84b44;*/
     display: flex;
-    justify-content: center; /* Centers the content vertically */
+    justify-content: center;
     padding-top: 0px;
 }
 
@@ -110,4 +109,43 @@ h1, h2, h3 {
     background: white;
     border: 2px solid white;
     box-shadow: 0 2px 0 2px black, inset 0 2px 0 2px black, 0 0 0 2px black, inset 0 0 0 2px black;
+}
+
+.message {
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.sent {
+    background-color: #007bff;
+    color: white;
+    align-self: flex-end;
+}
+.received {
+    background-color: #e9ecef;
+    color: black;
+    align-self: flex-start;
+}
+.list-group-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.list-group-item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+
+@media (max-width: 768px) {
+    .list-group-item {
+        justify-content: center;
+    }
+
+    #contactList .list-group-item span {
+        display: none;
+    }
 }
