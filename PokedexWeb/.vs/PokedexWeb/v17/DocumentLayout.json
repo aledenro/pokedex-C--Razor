@@ -1,0 +1,109 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\valer\\OneDrive\\Desktop\\5progra\\Proyecto\\PokedexWeb\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2637D752-C88A-4029-A18B-ACA6BEB7EA4A}|PokedexWeb\\PokedexWeb.csproj|c:\\users\\valer\\onedrive\\desktop\\5progra\\proyecto\\pokedexweb\\pokedexweb\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2637D752-C88A-4029-A18B-ACA6BEB7EA4A}|PokedexWeb\\PokedexWeb.csproj|solutionrelative:pokedexweb\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2637D752-C88A-4029-A18B-ACA6BEB7EA4A}|PokedexWeb\\PokedexWeb.csproj|c:\\users\\valer\\onedrive\\desktop\\5progra\\proyecto\\pokedexweb\\pokedexweb\\pages\\views\\pokemon\\detalle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2637D752-C88A-4029-A18B-ACA6BEB7EA4A}|PokedexWeb\\PokedexWeb.csproj|solutionrelative:pokedexweb\\pages\\views\\pokemon\\detalle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2637D752-C88A-4029-A18B-ACA6BEB7EA4A}|PokedexWeb\\PokedexWeb.csproj|c:\\users\\valer\\onedrive\\desktop\\5progra\\proyecto\\pokedexweb\\pokedexweb\\pages\\views\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2637D752-C88A-4029-A18B-ACA6BEB7EA4A}|PokedexWeb\\PokedexWeb.csproj|solutionrelative:pokedexweb\\pages\\views\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2637D752-C88A-4029-A18B-ACA6BEB7EA4A}|PokedexWeb\\PokedexWeb.csproj|c:\\users\\valer\\onedrive\\desktop\\5progra\\proyecto\\pokedexweb\\pokedexweb\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{2637D752-C88A-4029-A18B-ACA6BEB7EA4A}|PokedexWeb\\PokedexWeb.csproj|solutionrelative:pokedexweb\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2637D752-C88A-4029-A18B-ACA6BEB7EA4A}|PokedexWeb\\PokedexWeb.csproj|c:\\users\\valer\\onedrive\\desktop\\5progra\\proyecto\\pokedexweb\\pokedexweb\\pages\\views\\pokemon\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2637D752-C88A-4029-A18B-ACA6BEB7EA4A}|PokedexWeb\\PokedexWeb.csproj|solutionrelative:pokedexweb\\pages\\views\\pokemon\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\valer\\OneDrive\\Desktop\\5progra\\Proyecto\\PokedexWeb\\PokedexWeb\\Pages\\Views\\Login.cshtml",
+              "RelativeDocumentMoniker": "PokedexWeb\\Pages\\Views\\Login.cshtml",
+              "ToolTip": "C:\\Users\\valer\\OneDrive\\Desktop\\5progra\\Proyecto\\PokedexWeb\\PokedexWeb\\Pages\\Views\\Login.cshtml",
+              "RelativeToolTip": "PokedexWeb\\Pages\\Views\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-27T21:56:20.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Detalle.cshtml",
+              "DocumentMoniker": "C:\\Users\\valer\\OneDrive\\Desktop\\5progra\\Proyecto\\PokedexWeb\\PokedexWeb\\Pages\\Views\\Pokemon\\Detalle.cshtml",
+              "RelativeDocumentMoniker": "PokedexWeb\\Pages\\Views\\Pokemon\\Detalle.cshtml",
+              "ToolTip": "C:\\Users\\valer\\OneDrive\\Desktop\\5progra\\Proyecto\\PokedexWeb\\PokedexWeb\\Pages\\Views\\Pokemon\\Detalle.cshtml",
+              "RelativeToolTip": "PokedexWeb\\Pages\\Views\\Pokemon\\Detalle.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-27T16:25:11.336Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\valer\\OneDrive\\Desktop\\5progra\\Proyecto\\PokedexWeb\\PokedexWeb\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "PokedexWeb\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\valer\\OneDrive\\Desktop\\5progra\\Proyecto\\PokedexWeb\\PokedexWeb\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "PokedexWeb\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAFQAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-11-26T20:40:32.859Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\valer\\OneDrive\\Desktop\\5progra\\Proyecto\\PokedexWeb\\PokedexWeb\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "PokedexWeb\\Pages\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\valer\\OneDrive\\Desktop\\5progra\\Proyecto\\PokedexWeb\\PokedexWeb\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "PokedexWeb\\Pages\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAACwAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-26T20:39:40.754Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\valer\\OneDrive\\Desktop\\5progra\\Proyecto\\PokedexWeb\\PokedexWeb\\Pages\\Views\\Pokemon\\Index.cshtml",
+              "RelativeDocumentMoniker": "PokedexWeb\\Pages\\Views\\Pokemon\\Index.cshtml",
+              "ToolTip": "C:\\Users\\valer\\OneDrive\\Desktop\\5progra\\Proyecto\\PokedexWeb\\PokedexWeb\\Pages\\Views\\Pokemon\\Index.cshtml",
+              "RelativeToolTip": "PokedexWeb\\Pages\\Views\\Pokemon\\Index.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACMAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-26T20:35:44.592Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+html {
+  font-size: 14px;
+  
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+h1, h2, h3 {
+    font-family: "Silkscreen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.btn {
+    font-family: "Silkscreen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#psiquico {
+    background-color: #e9487f !important;
+}
+
+#planta {
+    background-color: #3da228 !important;
+}
+
+#fuego {
+    background-color: #e92728 !important;
+}
+
+#veneno {
+    background-color: #963dcb !important;
+}
+
+#hielo {
+    background-color: #3dd9ff !important;
+}
+
+#volador {
+    background-color: #84baef !important;
+}
+
+.badge {
+    font-family: "Russo One", sans-serif;
+    font-weight: 400;
+    text-shadow: 1px 1px 8px #000 !important;
+    
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    color: black;
+}
+
+.centered {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Silkscreen", sans-serif;
+}
+
+.rotomdex {
+    font-family: "Russo One", sans-serif;
+    font-weight: 400;
+}
+
+/*#login {
+    background-color: #e84b44;
+
+}*/

@@ -1,0 +1,76 @@
+﻿@page
+@model PokedexWeb.Pages.Views.Pokemon.DetalleModel
+@{
+    <main class="content">
+        <div class="container-fluid p-0">
+            <div class="col-8 mx-auto">
+
+                <h1 class="text-center mb-3">Bulbasaur</h1>
+
+                <div class="row g-5">
+                    <div class="col-md-4 col-lg-3 order-md-last">
+                        <img src="https://img.pokemondb.net/artwork/bulbasaur.jpg" height="306">
+                    </div>
+                    <div class="col-md-6 col-lg-7">
+						<h3>Informacion</h3>
+						<table>
+							<tbody>
+								<tr class="border-bottom">
+									<th class="py-3 text-end">#</th>
+									<td class="px-3 py-3">001</td>
+								</tr>
+								<tr class="border-bottom">
+									<th class="py-3 text-end">Tipo</th>
+									<td class="px-3 py-3">
+										<span class="badge text-bg-success rounded-pill" id="planta">Planta</span>
+										<span class="badge text-bg-success rounded-pill" id="veneno">Veneno</span>
+									</td>
+								</tr>
+								<tr class="border-bottom">
+									<th class="py-3 text-end">Debilidad</th>
+									<td class="px-3 py-3">
+										<span class="badge text-bg-success rounded-pill" id="fuego">Fuego</span>
+										<span class="badge text-bg-success rounded-pill" id="hielo">Hielo</span>
+										<span class="badge text-bg-success rounded-pill" id="volador">Volador</span>
+										<span class="badge text-bg-success rounded-pill" id="psiquico">Psiquico</span>
+									</td>
+								</tr>
+								<tr class="border-bottom">
+									<th class="py-3 text-end">Weight</th>
+									<td class="px-3 py-3">6.9 kg</td>
+								</tr>
+							</tbody>
+						</table>
+                    </div>
+					
+                </div>
+				<div class="mt-4">
+					<h3>Evoluciones</h3>
+					<div class="row g-4 py-5 row-cols-1 row-cols-md-3">
+
+						<div class="feature col  text-center">
+							<img src="https://img.pokemondb.net/artwork/bulbasaur.jpg" height="120" />
+							<h4>Bulbasaur <small class="text-body-secondary">001</small></h4>
+							<p><a class="btn btn-danger" href="#" style="font-family: Silkscreen, sans-serif;">Ir »</a></p>
+
+						</div>
+						<div class="feature col  text-center">
+							<img src="https://img.pokemondb.net/artwork/ivysaur.jpg" height="120" />
+							<h4>Ivysaur <small class="text-body-secondary">002</small></h4>
+							<p><a class="btn btn-danger" href="#" style="font-family: Silkscreen, sans-serif;">Ir »</a></p>
+
+						</div>
+						<div class="feature col  text-center">
+							<img src="https://img.pokemondb.net/artwork/venusaur.jpg" height="120" />
+							<h4>Venusaur <small class="text-body-secondary">003</small></h4>
+							<p><a class="btn btn-danger" href="#" style="font-family: Silkscreen, sans-serif;">Ir »</a></p>
+
+						</div>
+					</div>
+				</div>
+				
+            </div>
+        </div>
+    </main>
+
+}
