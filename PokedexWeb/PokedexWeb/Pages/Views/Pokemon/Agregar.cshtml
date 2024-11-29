@@ -4,16 +4,17 @@
 }
 <main class="content">
     <div class="container-fluid p-0">
-        <div class="col-8 mx-auto">
+        <div id="dialogbox" class="col-8 mx-auto mt-5 py-3">
 
-            <h1 class="text-center mb-3">Agregar Pokemon</h1>
+            <h1 class="text-center my-3">Agregar Pokemon</h1>
 
-            <form>
+            <form class="m-4">
                 <div class="mb-3">
                     <label for="nombre" class="form-label">Nombre de Pokemon:</label>
                     <input type="text" class="form-control" id="nombre" required>
                 </div>
-                <div class="mb-3">
+                <div class="row">
+                <div class="col mb-3">
                     <label for="tipo" class="form-label">Tipo:</label>
                     <select class="form-select" data-coreui-search="true" required id="tipo">
                         <option value="fuego" selected>Fuego</option>
@@ -24,7 +25,7 @@
                         <option value="veneno">Veneno</option>
                     </select>
                 </div>
-                <div class="mb-3">
+                <div class="col mb-3">
                     <label for="debilidad" class="form-label">Debilidad:</label>
                     <select class="form-select" data-coreui-search="true" required id="debilidad">
                         <option value="fuego" selected>Fuego</option>
@@ -33,7 +34,9 @@
                         <option value="psiquico">Psiquico</option>
                     </select>
                 </div>
-                <div class="mb-3">
+                </div>
+                <div class="row">
+                <div class="col mb-3">
                     <label for="evoluciones" class="form-label">Evoluciones:</label>
                     <select class="form-select" data-coreui-search="true" required id="evoluciones" multiple>
                         <option value="Bulbasaur" selected>Bulbasaur 001</option>
@@ -42,11 +45,11 @@
                     </select>
                 </div>
 
-                <div class="mb-3">
+                <div class="col mb-3">
                     <label for="peso" class="form-label">Peso:</label>
                     <input type="number" class="form-control" id="peso" required>
                 </div>
-
+                </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
