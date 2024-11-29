@@ -1,0 +1,54 @@
+﻿@page
+@model PokedexWeb.Pages.Views.Pokemon.AgregarModel
+@{
+}
+<main class="content">
+    <div class="container-fluid p-0">
+        <div class="col-8 mx-auto">
+
+            <h1 class="text-center mb-3">Agregar Pokemon</h1>
+
+            <form>
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre de Pokemon:</label>
+                    <input type="text" class="form-control" id="nombre" required>
+                </div>
+                <div class="mb-3">
+                    <label for="tipo" class="form-label">Tipo:</label>
+                    <select class="form-select" data-coreui-search="true" required id="tipo">
+                        <option value="fuego" selected>Fuego</option>
+                        <option value="hielo">Hielo</option>
+                        <option value="volador">Volador</option>
+                        <option value="psiquico">Psiquico</option>
+                        <option value="planta">Planta</option>
+                        <option value="veneno">Veneno</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="debilidad" class="form-label">Debilidad:</label>
+                    <select class="form-select" data-coreui-search="true" required id="debilidad">
+                        <option value="fuego" selected>Fuego</option>
+                        <option value="hielo">Hielo</option>
+                        <option value="volador">Volador</option>
+                        <option value="psiquico">Psiquico</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="evoluciones" class="form-label">Evoluciones:</label>
+                    <select class="form-select" data-coreui-search="true" required id="evoluciones" multiple>
+                        <option value="Bulbasaur" selected>Bulbasaur 001</option>
+                        <option value="Ivysaur">Ivysaur 002</option>
+                        <option value="Venusaur">Venusaur 003</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="peso" class="form-label">Peso:</label>
+                    <input type="number" class="form-control" id="peso" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</main>
