@@ -1,0 +1,89 @@
+﻿@page
+@model PokedexWeb.Pages.Views.Enfermeria.IndexModel
+@{
+    <main class="content mx-sm-2">
+        <div class="container-fluid p-0">
+            <div class="col-lg-8 col-md-10 mx-auto">
+
+                <h1 class="text-center my-4">Enfermeria</h1>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="mb-3 d-flex justify-content-between align-items-center w-100">
+                            <h3>Mis Casos Asignados</h3>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="md-auto">
+                            <div class="card table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Nombre</th>
+                                            <th>Peso</th>
+                                            <th>Entrenador</th>
+                                            <th>Enfermero</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>001</td>
+                                            <td><a href="/Views/Pokemon/Detalle">Bulbasaur</a></td>
+                                            <td>6.9 kg</td>
+                                            <td>Ash</td>
+                                            <td>Joy</td>
+                                            <td>
+                                                <a href="">Dar de alta</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="mb-3 d-flex justify-content-between align-items-center w-100">
+                            <h3>Casos Pendientes</h3>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="md-auto">
+                            <div class="card table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Nombre</th>
+                                            <th>Peso</th>
+                                            <th>Entrenador</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>002</td>
+                                            <td><a href="">Ivysaur</a></td>
+                                            <td>13.0 kg</td>
+                                            <td>Serena</td>
+                                            <td>
+                                                <a href="">Asignar</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+}

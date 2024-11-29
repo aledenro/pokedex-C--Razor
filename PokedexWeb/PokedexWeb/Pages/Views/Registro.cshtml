@@ -1,15 +1,17 @@
 ﻿@page
 @model RegistroModel
 @{
-    <main class="container">
-        <div class="d-flex align-items-center">
-            <div id="dialogbox" class="align-items-center row">
-                <div class="col-10 p-3 mx-auto">
-                    <h1 class="mb-4">Registrarse</h1>
-                    <form>
-                        <div class="form-group text-start">
+    <main class="container my-4" id="registro">
+        <div class="row justify-content-center mb-6">
+            <div class="col-xl-5 col-lg-6 col-md-8 col-12 ">
+
+                <div id="dialogbox" class="p-4">
+
+                    <form class="m-4 needs-validation" method="post">
+                        <h1 class="text-center mb-4">Registro</h1>
+                        <div class="form-group text-start ">
                             <label class="form-label text-start" for="usuario">Nombre de Usuario</label>
-                            <input type="text" class="form-control" id="usuario" name="usuario">
+                            <input type="text" class="form-control mb-2" id="usuario" name="usuario">
                         </div>
                         <div class="form-group text-start mt-2">
                             <label class="form-label text-start" for="correo">Correo Electrónico</label>
@@ -24,15 +26,16 @@
                             <input placeholder="Ingresa tú contraseña" type="password" class="form-control" id="password" name="password">
                         </div>
                         <button type="button" class="w-100 my-3 btn btn-primary">Registrar</button>
-                        <p class="text-center"><small class="text-body-secondary text-center">Ya tienes una cuenta? <a href="/Views/Registro">Inicia Sesion</a>.</small></p>
-
+                        <p class="text-center"><small class="text-body-secondary text-center">Ya tienes una cuenta? <a href="/Views/Login">Inicia Sesion</a>.</small></p>
                     </form>
+
                 </div>
+
 
             </div>
         </div>
-
-
     </main>
 
 }
+
+

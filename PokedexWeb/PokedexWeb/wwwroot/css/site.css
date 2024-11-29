@@ -63,6 +63,14 @@ h1, h2, h3 {
     background-color: #84baef !important;
 }
 
+#tierra {
+    background-color: #905120 !important;
+}
+
+#electrico {
+    background-color: #f4c200 !important;
+}
+
 .badge {
     font-family: "Russo One", sans-serif;
     font-weight: 400;
@@ -95,7 +103,12 @@ h1, h2, h3 {
 
 #login {
     min-height: 100vh;
-    display: flex;
+    justify-content: center;
+    padding-top: 0px;
+}
+
+#registro {
+    min-height: 100vh;
     justify-content: center;
     padding-top: 0px;
 }
