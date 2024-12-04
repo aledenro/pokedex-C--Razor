@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PokedexWeb")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0614d6bc04bba1aaff253a7ab1d530c707ecf398")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3f8443c197468fab99ef59c629ce026f37cea8ef")]
 [assembly: System.Reflection.AssemblyProductAttribute("PokedexWeb")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PokedexWeb")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -13,6 +13,18 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\valer\\OneDrive\\Desktop\\5progra\\Proyecto_PrograWeb\\PokedexWeb\\PokedexWeb\\wwwroot\\img\\cerulean-city.png",
+      "PackagePath": "staticwebassets\\img\\cerulean-city.png"
+    },
+    {
+      "Id": "C:\\Users\\valer\\OneDrive\\Desktop\\5progra\\Proyecto_PrograWeb\\PokedexWeb\\PokedexWeb\\wwwroot\\img\\frame-hd.png",
+      "PackagePath": "staticwebassets\\img\\frame-hd.png"
+    },
+    {
+      "Id": "C:\\Users\\valer\\OneDrive\\Desktop\\5progra\\Proyecto_PrograWeb\\PokedexWeb\\PokedexWeb\\wwwroot\\img\\logo.png",
+      "PackagePath": "staticwebassets\\img\\logo.png"
+    },
+    {
       "Id": "C:\\Users\\valer\\OneDrive\\Desktop\\5progra\\Proyecto_PrograWeb\\PokedexWeb\\PokedexWeb\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

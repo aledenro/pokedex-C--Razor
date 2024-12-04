@@ -3,41 +3,187 @@ html {
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+header {
+    background-color: rgba(255, 255, 255, 0.8);
+    font-family: "Oxanium", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 body {
+    margin: 0;
+    padding: 0;
+    background-image: url(/img/cerulean-city.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: "Oxanium", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1, h2 {
+    font-family: "Press Start 2P", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+.title2 {
+    font-family: "Oxanium", serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.8rem;
+}
+
+#title {
+    font-family: "Press Start 2P", serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.main-content {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    margin-top: 60px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 60px;
-}
-
-h1, h2, h3 {
-    font-family: "Silkscreen", sans-serif;
+    font-family: "Oxanium", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 
-* {
-    font-family: "Montserrat", serif;
-    font-optical-sizing: auto;
-    font-style: normal;
+.frame {
+    border-image: url("/img/frame-hd.png") 42 round;
+    border-width: 21px;
+    border-style: solid;
 }
 
-.btn {
-    font-family: "Silkscreen", sans-serif;
+
+
+.button {
+    background-color: #49494b;
+    border-radius: 10px;
+    padding: 0 20px;
+    box-shadow: inset 0 -0.0625em 0.125em rgba(0, 0, 0, 0.75), inset 0 0.125em 0.125em -0.0625em rgba(255, 255, 255, 0.4), 0 0 0.03125em 0.0625em rgba(0, 0, 0, 0.6), 0 0.0625em 0.25em 0.03125em rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    font-family: "Press Start 2P", serif;
     font-weight: 400;
-    font-style: normal;
+    font-size: 12px;
 }
+
+.button:active {
+    box-shadow: inset 0 -0.0625em 0.125em rgba(0, 0, 0, 0.75), inset 0 0.125em 0.125em -0.0625em rgba(255, 255, 255, 0.4), 0 0 0.03125em 0.0625em rgba(0, 0, 0, 0.6);
+}
+
+.button-red {
+    background-color: rgb(255, 69, 83);
+    border-radius: 10px;
+    padding: 0 20px;
+    box-shadow: inset 0 -0.0625em 0.125em rgba(0, 0, 0, 0.75), inset 0 0.125em 0.125em -0.0625em rgba(255, 255, 255, 0.4), 0 0 0.03125em 0.0625em rgba(0, 0, 0, 0.6), 0 0.0625em 0.25em 0.03125em rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    font-family: "Press Start 2P", serif;
+    font-weight: 400;
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
+
+.button-red:hover {
+    background-color: rgb(240, 63, 78);
+}
+
+.button-blue {
+    background-color: rgb(0, 195, 227);
+    border-radius: 10px;
+    padding: 0 20px;
+    box-shadow: inset 0 -0.0625em 0.125em rgba(0, 0, 0, 0.75), inset 0 0.125em 0.125em -0.0625em rgba(255, 255, 255, 0.4), 0 0 0.03125em 0.0625em rgba(0, 0, 0, 0.6), 0 0.0625em 0.25em 0.03125em rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    font-family: "Press Start 2P", serif;
+    font-weight: 400;
+    font-size: 12px;
+    transition: all 0.3s ease;
+    
+}
+
+.button-blue:hover {
+    background-color: rgb(0, 183, 211);
+}
+
+.icon {
+    height: 50px;
+    width: 50px;
+    font-size: 1rem;
+    padding-bottom: 12px;
+    padding: 5px 5px;
+}
+
+input {
+    background-color: #49494b;
+    border-radius: 10px;
+    padding: 0 20px;
+    box-shadow: inset 0 -0.0625em 0.125em rgba(0, 0, 0, 0.75), inset 0 0.125em 0.125em -0.0625em rgba(255, 255, 255, 0.4), 0 0 0.03125em 0.0625em rgba(0, 0, 0, 0.6), 0 0.0625em 0.25em 0.03125em rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.message {
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.sent {
+    background-color: #007bff;
+    color: white;
+    align-self: flex-end;
+}
+
+.received {
+    background-color: #e9ecef;
+    color: black;
+    align-self: flex-start;
+}
+
+.list-group-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.list-group-item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+
+@media (max-width: 768px) {
+    .list-group-item {
+        justify-content: center;
+    }
+
+    #contactList .list-group-item span {
+        display: none;
+    }
+}
+    /*
+
+
 
 #psiquico {
     background-color: #e9487f !important;
@@ -78,40 +224,6 @@ h1, h2, h3 {
     
 }
 
-.container {
-    position: relative;
-    text-align: center;
-    color: black;
-}
-
-.centered {
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: "Silkscreen", sans-serif !important;
-    font-size: 1.5rem;
-}
-
-
-@media (min-width: 992px) {
-   .centered {
-        font-size: 2rem;
-    }
-}
-
-
-#login {
-    min-height: 100vh;
-    justify-content: center;
-    padding-top: 0px;
-}
-
-#registro {
-    min-height: 100vh;
-    justify-content: center;
-    padding-top: 0px;
-}
 
 #dialogbox {
     border-radius: 2px;
@@ -124,41 +236,4 @@ h1, h2, h3 {
     box-shadow: 0 2px 0 2px black, inset 0 2px 0 2px black, 0 0 0 2px black, inset 0 0 0 2px black;
 }
 
-.message {
-    padding: 10px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
-.sent {
-    background-color: #007bff;
-    color: white;
-    align-self: flex-end;
-}
-.received {
-    background-color: #e9ecef;
-    color: black;
-    align-self: flex-start;
-}
-.list-group-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.list-group-item img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-}
-
-
-@media (max-width: 768px) {
-    .list-group-item {
-        justify-content: center;
-    }
-
-    #contactList .list-group-item span {
-        display: none;
-    }
-}
+*/

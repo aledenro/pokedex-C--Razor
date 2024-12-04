@@ -1,78 +1,71 @@
 ﻿@page
 @model PokedexWeb.Pages.Views.Usuario.EquipoModel
 @{
-    <main class="content mx-sm-2">
-        <div class="container-fluid p-0">
-            <div class="col-lg-8 col-md-10 mx-auto">
 
-                <h1 class="text-center my-4">Mis Pokemon</h1>
-
-                <div class="row">
-                    <div class="md-auto">
-                        <div class="card table-responsive">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-
-
-                                        <th></th>
-                                        <th>#</th>
-                                        <th>Nombre</th>
-                                        <th>Tipos</th>
-                                        <th>Debilidad</th>
-                                        <th>Peso</th>
-                                        <th>Equipo</th>
-                                        <th>Acciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <img class="text-center" style="display:block; margin:auto;" src="https://img.pokemondb.net/sprites/black-white/anim/normal/bulbasaur.gif" alt="Bulbasaur">
-                                        </td>
-                                        <td>001</td>
-                                        <td><a href="/Views/Pokemon/Detalle">Bulbasaur</a></td>
-                                        <td>
-                                            <p>
-                                                <span class="badge text-bg-success rounded-pill" id="planta">Planta</span>
-                                            </p>
-                                            <p>
-                                                <span class="badge text-bg-success rounded-pill" id="veneno">Veneno</span>
-                                            </p>
-                                        </td>
-                                        <td>
-                                            <p>
-                                                <span class="badge text-bg-success rounded-pill" id="fuego">Fuego</span>
-                                            </p>
-                                            <p>
-                                                <span class="badge text-bg-success rounded-pill" id="hielo">Hielo</span>
-                                            </p>
-                                            <p>
-                                                <span class="badge text-bg-success rounded-pill" id="volador">Volador</span>
-                                            </p>
-                                            <p>
-                                                <span class="badge text-bg-success rounded-pill" id="psiquico">Psiquico</span>
-                                            </p>
-                                        </td>
-                                        <td>6.9 kg</td>
-                                        <td>
-                                            <p>
-                                                <span class="badge text-bg-success rounded-pill" id="planta">Si</span>
-                                            </p>
-                                        </td>
-                                        <td>
-                                            <a class="mx-1" href=""><i class="fa-solid fa-plus"></i></a>
-                                            <a class="mx-1" href=""><i class="fa-solid fa-user-doctor"></i></a>
-                                            <a class="mx-1" href="/Views/Pokemon/Editar"><i class="fa-solid fa-pen"></i></a>
-                                            <a class="mx-1" href="/Views/Pokemon/Eliminar"><i class="fa-solid fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
+    ViewData["Title"] = "Mis Pokémon";
 }
+
+<h1 class="text-center mt-3 mb-4">Mis Pokémon</h1>
+<div class="row">
+    <div class="md-auto">
+        <div class="card table-responsive mx-5">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Tipo</th>
+                        <th>Habilidad</th>
+                        <th>Peso</th>
+                        <th>Altura</th>
+                        <th>Equipo</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <img class="text-center" style="display:block; margin:auto;" src="https://img.pokemondb.net/sprites/black-white/anim/normal/bulbasaur.gif" alt="Bulbasaur">
+                        </td>
+                        <td>001</td>
+                        <td><a href="/Views/Pokemon/Detalle">Bulbasaur</a></td>
+                        <td>
+                            <p>
+                                <span class="badge text-bg-success rounded-pill" id="planta">Planta</span>
+                            </p>
+                            <p>
+                                <span class="badge text-bg-success rounded-pill" id="veneno">Veneno</span>
+                            </p>
+                        </td>
+                        <td>Espesura</td>
+                        <td>6.9 kg</td>
+                        <td>0.7 m</td>
+                        <td>
+                            <p>
+                                <span class="badge text-bg-success rounded-pill" id="planta">Si</span>
+                            </p>
+                        </td>
+                        <td>
+                            <button class="button icon">
+                                <a href="" type="button" class="text-white text-decoration-none" title="Agregar a mi equipo"><i class="fa-solid fa-plus"></i></a>
+                            </button>
+                            <button class="button icon">
+                                <a href="/Views/Pokemon/Eliminar" type="button" class="text-white text-decoration-none" title="Llevar al Centro Pokemon"><i class="fa-solid fa-user-doctor"></i></a>
+                            </button>
+                            <button class="button icon">
+                                <a href="/Views/Pokemon/Editar" type="button" class="text-white text-decoration-none" title="Modificar Pokemon"><i class="fa-solid fa-pen"></i></a>
+                            </button>
+                            <button class="button icon">
+                                <a href="/Views/Pokemon/Eliminar" type="button" class="text-white text-decoration-none" title="Liberar Pokemon"><i class="fa-solid fa-trash"></i></a>
+                            </button>
+                            
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

@@ -1,35 +1,53 @@
 ﻿@page
 @model PokedexWeb.Pages.Views.LoginModel
 @{
+    
+    ViewData["Title"] = "Login";
+}
 
-    <main id="login" class="container mt-4">
-        <div class="d-flex align-items-center">
-            <div id="dialogbox" class="row">
-                <div class="col-10 p-3 mx-auto">
-                    <h1 class="text-center mb-4">Iniciar Sesion</h1>
-                    <form class="m-2 needs-validation" method="post">
-                        <div class="form-group text-start">
-                            <label class="form-label text-start">Correo Electrónico</label>
-                            <input placeholder="name@address.com" type="email" class="form-control">
-                        </div>
-                        <div class="form-group text-start mt-2">
-                            <label class="form-label">Contraseña</label>
-                            <input placeholder="Ingresa tú contraseña" type="password" class="form-control">
+    <div class="row justify-content-center mb-6">
+        <h1 class=" fw-bold text-center my-3">Iniciar Sesión</h1>
+        <div class="col-6 m-4">
+            <form class="needs-validation mb-6" method="post">
 
-                            <div class="col-auto text-end mt-2">
-                                <a class="small text-body-secondary form-text text-end" href="/password-reset">Olvidaste tu contraseña?</a>
-                            </div>
-                        </div>
-                        <button type="button" class="w-100 my-3 btn btn-primary">Entrar</button>
-                        <p class="text-center"><small class="text-body-secondary text-center">Aún no tienes una cuenta? <a href="/Views/Registro">Regístrate</a>.</small></p>
-
-                    </form>
+                <div class="mb-3">
+                    <label for="email" class="form-label">
+                        Email
+                        <span class="text-danger">*</span>
+                    </label>
+                    <input type="email" class="form-control" id="Correo" name="Correo" required>
+                    <div class="invalid-feedback">Por favor ingrese su correo</div>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">
+                        Contraseña
+                        <span class="text-danger">*</span>
+                    </label>
+                    <div class="password-field position-relative">
+                        <input type="password" class="form-control" id="Password" name="Password" required>
+                        <div class="invalid-feedback">Por favor ingrese su contraseña</div>
+                    </div>
                 </div>
 
-            </div>
+                <div class=" mb-4 text-end">
+                    <span>
+                        <a href="/Usuarios/Restaurar" class="text-primary ">¿Olvidaste tu contraseña?</a>
+                    </span>
+                </div>
+                <div class="d-grid">
+                    <button class="button-blue py-2 mb-3">
+                        <a href="" type="submit" class="text-white text-decoration-none">Iniciar Sesion</a>
+                    </button>
+                </div>
+                <div class=" my-2 text-center">
+                    <span>
+                        ¿Aún no tienes una cuenta?
+                        <a href="/Usuarios/Registro" class="text-primary ">Regístrate</a>
+                    </span>
+                </div>
+
+                
+
+            </form>
         </div>
-        
-
-    </main>
-
-}
+    </div>

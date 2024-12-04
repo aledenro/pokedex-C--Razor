@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0">
 
-    <title>@ViewData["Title"] - PokedexWeb</title>
+    <title>@ViewData["Title"] - WebDex</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/PokedexWeb.styles.css" asp-append-version="true" />
@@ -12,48 +12,58 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Russo+One&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&family=Press+Start+2P&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@800&family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow">
+        <nav class="navbar navbar-expand-lg navbar-light border-bottom box-shadow">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Views/Pokemon/Index">WebDex</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand" id="title" asp-area="" asp-page="/Index"><img src="/img/logo.png" height="50"/></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                        aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Views/Pokemon/Index">Pokedex</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Views/Enfermeria/Index">Enfermeria</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Views/Enfermeria/Index">Centro Pokémon</a>
                         </li>
-                        
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Views/Batalla">Batallas</a>
+                        </li>
                     </ul>
-                    <div class="text-end">
-                        <ul class="navbar-nav flex-grow-1">
-                            <li class="nav-item">
-                                <a type="button" class="button btn btn-light text-dark me-2" class="nav-link text-dark" asp-area="" asp-page="/Views/Login">Login</a>
+                    <div class="d-flex align-items-center">
+                        <ul class="navbar-nav">
+                            <li class="nav-item my-2">
+                                <button class="button-blue me-2">
+                                    <a type="button" class="text-white nav-link" asp-area="" asp-page="/Views/Login">Login</a>
+                                </button>
                             </li>
-                            <li class="nav-item">
-                                <a type="button" class="btn btn-primary" class="nav-link text-dark" asp-area="" asp-page="/Views/Registro">Registro</a>
+                            <li class="nav-item my-2">
+                                <button class="button-red me-2">
+                                    <a type="button" class="text-white nav-link" asp-area="" asp-page="/Views/Registro">Registro</a>
+                                </button>
                             </li>
-                            <li  class="nav-item mx-2">
-                                <div class="dropdown text-end">
-                                    <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <img src="https://platform.polygon.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/7025215/ash-pikachu.0.jpg?quality=90&strip=all&crop=21.888726207906,0,56.222547584187,100" alt="mdo" width="32" height="32" class="rounded-circle">
-                                    </a>
-                                    <ul class="dropdown-menu text-small">
-                                        <li><a class="dropdown-item" href="/Views/Usuario/Equipo">Mis Pokemones</a></li>
-                                        <li><a class="dropdown-item" href="/Views/Usuario/Chat">Chats</a></li>
-                                        <li><a class="dropdown-item" href="#">Perfil</a></li>
-                                        <li><hr class="dropdown-divider"></li>
-                                        <li><a class="dropdown-item" href="#">Salir</a></li>
-                                    </ul>
-                                </div>
+                            <li class="nav-item dropdown my-2">
+                                <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="https://platform.polygon.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/7025215/ash-pikachu.0.jpg?quality=90&strip=all&crop=21.888726207906,0,56.222547584187,100" 
+                                    alt="mdo" width="37" height="37" class="rounded-circle" id="profile-picture">
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end text-small">
+                                    <li><a class="dropdown-item" href="/Views/Usuario/Equipo">Mis Pokemones</a></li>
+                                    <li><a class="dropdown-item" href="/Views/Usuario/Chat">Chats</a></li>
+                                    <li><a class="dropdown-item" href="#">Perfil</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Salir</a></li>
+                                </ul>
                             </li>
                         </ul>
 
@@ -61,11 +71,14 @@
                 </div>
             </div>
         </nav>
+
     </header>
-    <div>
-        <main role="main">
-            @RenderBody()
-        </main>
+    <div class="container col-12 col-md-9 ">
+        <div class="frame main-content mx-auto">
+            <main role="main">
+                @RenderBody()
+            </main>
+        </div>
     </div>
 
 
