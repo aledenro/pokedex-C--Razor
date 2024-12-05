@@ -131,7 +131,7 @@ a {
     padding: 5px 5px;
 }
 
-input {
+input, select{
     background-color: #49494b;
     border-radius: 10px;
     padding: 0 20px;
@@ -141,6 +141,16 @@ input {
     font-size: 12px;
 }
 
+/*select {
+    background-color: #49494b;
+    border-radius: 10px;
+    padding: 0 20px;
+    box-shadow: inset 0 -0.0625em 0.125em rgba(0, 0, 0, 0.75), inset 0 0.125em 0.125em -0.0625em rgba(255, 255, 255, 0.4), 0 0 0.03125em 0.0625em rgba(0, 0, 0, 0.6), 0 0.0625em 0.25em 0.03125em rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 12px;
+}*/
+
 .message {
     padding: 10px;
     border-radius: 10px;
@@ -148,14 +158,14 @@ input {
 }
 
 .sent {
-    background-color: #007bff;
+    background-color: rgb(0, 195, 227);
     color: white;
     align-self: flex-end;
 }
 
 .received {
-    background-color: #e9ecef;
-    color: black;
+    background-color: #49494b;
+    color: white;
     align-self: flex-start;
 }
 
@@ -181,59 +191,130 @@ input {
         display: none;
     }
 }
-    /*
 
-
-
-#psiquico {
-    background-color: #e9487f !important;
+#acero {
+    background-color: #60a1b7 !important;
 }
 
-#planta {
-    background-color: #3da228 !important;
+#agua {
+    background-color: #2981ef !important;
 }
 
-#fuego {
-    background-color: #e92728 !important;
+#bicho {
+    background-color: #91a11a !important;
 }
 
-#veneno {
-    background-color: #963dcb !important;
-}
-
-#hielo {
-    background-color: #3dd9ff !important;
-}
-
-#volador {
-    background-color: #84baef !important;
-}
-
-#tierra {
-    background-color: #905120 !important;
+#dragon {
+    background-color: #5061e2 !important;
 }
 
 #electrico {
     background-color: #f4c200 !important;
 }
 
+#fantasma {
+    background-color: #704070 !important;
+}
+
+
+#fuego {
+    background-color: #e92728 !important;
+}
+
+#hada {
+    background-color: #ef71ef !important;
+}
+
+#hielo {
+    background-color: #3dd9ff !important;
+}
+
+#lucha {
+
+    background-color: #ff7f00 !important;
+}
+
+#normal {
+    background-color: #9fa19e !important;
+}
+
+#planta {
+    background-color: #3da228 !important;
+}
+
+#psiquico {
+    background-color: #ee4179 !important;
+}
+
+#roca {
+    background-color: #aea981 !important;
+}
+
+#siniestro {
+    background-color: #50413e !important;
+}
+
+#tierra {
+    background-color: #915121 !important;
+}
+
+#veneno {
+    background-color: #963dcb !important;
+}
+
+
+#volador {
+    background-color: #84baef !important;
+}
+
 .badge {
-    font-family: "Russo One", sans-serif;
     font-weight: 400;
     text-shadow: 1px 1px 8px #000 !important;
-    
+}
+
+.badge-circle {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+
+.won {
+    background-color: #28a745;
+}
+
+.lost {
+    background-color: #dc3545;
 }
 
 
-#dialogbox {
-    border-radius: 2px;
-    padding: 20px;
-    line-height: 16px;
-    margin: auto;
-    height: auto;
-    background: white;
-    border: 2px solid white;
-    box-shadow: 0 2px 0 2px black, inset 0 2px 0 2px black, 0 0 0 2px black, inset 0 0 0 2px black;
+.table-style {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 2px solid #58585a;
+    border-radius: 10px;
+    overflow: hidden;
+
 }
 
-*/
+thead th {
+    background-color: #e84b44;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid #58585a;
+    text-align: center;
+}
+
+tbody td {
+    padding: 10px;
+    border: 1px solid #58585a;
+}
+
+tbody td {
+    padding: 10px;
+    border: 1px solid #58585a;
+    background-color: #fff;
+}

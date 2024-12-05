@@ -1,0 +1,74 @@
+﻿@page
+@model PokedexWeb.Pages.Views.Batalla.BatallaModel
+@{
+    ViewData["Title"] = "Batallas";
+}
+
+<h1 class="text-center my-3">Batallas Pokémon</h1>
+<div class="mx-5">
+    
+    <div class="row  d-flex justify-content-center">
+        <div class="md-auto col-10 text-center">
+            <div class="d-flex justify-content-end">
+                <button class="button-blue py-2 mb-3">
+                    <a href="/Views/Batalla/Agregar" type="button" class="text-white text-decoration-none">Registrar Batalla</a>
+                </button>
+            </div>
+            <div class="table-responsive">
+                <table class="table-style align-middle">
+                    <thead>
+                        <tr>
+                            <th>Retador</th>
+                            <th>Contrincante</th>
+                            <th>Fecha</th>
+                            <th>Lugar</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                May
+                                <span class="badge-circle won"></span>
+                            </td>
+                            <td>
+                                Drew
+                                <span class="badge-circle lost"></span>
+                            </td>
+                            <td>Kento Festival</td>
+                            <td>12/04/2024</td>
+                            <td>
+                                <button class="button icon">
+                                    <a href="/Views/Pokemon/Editar" type="button" class="text-white text-decoration-none" title="Modificar Pokemon"><i class="fa-solid fa-pen"></i></a>
+                                </button>
+                                <button class="button icon">
+                                    <a href="/Views/Pokemon/Eliminar" type="button" class="text-white text-decoration-none" title="Eliminar Pokemon"><i class="fa-solid fa-trash"></i></a>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                May
+                                <span class="badge-circle won"></span>
+                            </td>
+                            <td>
+                                Drew
+                                <span class="badge-circle lost"></span>
+                            </td>
+                            <td>Kento Festival</td>
+                            <td>12/04/2024</td>
+                            <td>
+                                <button class="button icon">
+                                    <a href="/Views/Pokemon/Editar" type="button" class="text-white text-decoration-none" title="Modificar Pokemon"><i class="fa-solid fa-pen"></i></a>
+                                </button>
+                                <button class="button icon">
+                                    <a href="/Views/Pokemon/Eliminar" type="button" class="text-white text-decoration-none" title="Eliminar Pokemon"><i class="fa-solid fa-trash"></i></a>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

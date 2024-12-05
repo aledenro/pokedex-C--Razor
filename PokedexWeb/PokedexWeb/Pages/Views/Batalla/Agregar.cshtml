@@ -1,0 +1,45 @@
+﻿@page
+@model PokedexWeb.Pages.Views.Batalla.AgregarModel
+@{
+    ViewData["Title"] = "Registrar Batalla";
+}
+
+
+<h1 class="text-center my-3">Registrar Batalla</h1>
+<div class="mx-5">
+    <div class="row  d-flex justify-content-center">
+        <form class="mt-4 col-10">
+            <div class="row align-items-center">
+                <div class="col mb-3">
+                    <label for="retador" class="form-label">Entrenador 1:</label>
+                    <input type="number" class="form-control" id="retador" required>
+                </div>
+
+                <div class="col-2 text-center d-flex justify-content-center align-items-center">
+                    <span class="h4" style="font-family: 'Press Start 2P', serif;">vs</span>
+                </div>
+
+                <div class="col mb-3">
+                    <label for="contrincante" class="form-label">Entrenador 2:</label>
+                    <input type="number" class="form-control" id="contrincante" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Lugar:</label>
+                <input type="text" class="form-control" id="nombre" placeholder="Ej. Gimnasio Pokémon de Ciudad Pradera" required>
+            </div>
+            <div class="col mb-3">
+                <label for="fecha" class="form-label">Fecha:</label>
+                <input type="date" class="form-control" id="fecha" required>
+
+            </div>
+            <div class="d-flex justify-content-end">
+                <button class="button-blue text-white py-2 mb-3" type="submit">
+                    Agregar
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
