@@ -1,6 +1,12 @@
+using PokedexWeb.Data;
 using PokedexWeb.Services;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var connectionString = builder.Configuration.GetConnectionString("connData");
+
+builder.Services.AddDbContext<ConnectionDbContext>(options => options.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 0, 21))));
 
 // Add services to the container.
 builder.Services.AddRazorPages();
