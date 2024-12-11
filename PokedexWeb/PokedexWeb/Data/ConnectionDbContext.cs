@@ -9,7 +9,7 @@ namespace PokedexWeb.Data
 
         public DbSet<TipoModel> Tipo_G7 {  get; set; }
 
-        public override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<TipoModel>().ToTable("Tipo_G7");
         }

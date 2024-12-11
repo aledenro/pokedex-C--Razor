@@ -1,7 +1,11 @@
-﻿namespace PokedexWeb.Models
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
+
+namespace PokedexWeb.Models
 {
     public class TipoModel
     {
+        [Key]
         public int id_tipo { get; set; }
         public string nombre { get; set; }
     }

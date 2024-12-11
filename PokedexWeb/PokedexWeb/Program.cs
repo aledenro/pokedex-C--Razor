@@ -6,11 +6,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 var connectionString = builder.Configuration.GetConnectionString("connData");
 
-builder.Services.AddDbContext<ConnectionDbContext>(options => options.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 0, 21))));
+builder.Services.AddDbContext<ConnectionDbContext>(options => options.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 0, 36))));
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddHttpClient<PokeApiService>();
+builder.Services.AddScoped<TipoService>();
 
 var app = builder.Build();
 

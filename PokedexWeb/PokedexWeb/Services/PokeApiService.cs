@@ -1,4 +1,5 @@
 ﻿using System.Net.WebSockets;
+using System.Security.Policy;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
@@ -30,7 +31,22 @@ namespace PokedexWeb.Services
             var content = await response.Content.ReadAsStringAsync();
 
             return JsonDocument.Parse(content);
+        }
 
+        public async Task<JsonDocument> GetAllAbilities()
+        {
+            var response = await _httpClient.GetAsync("https://pokeapi.co/api/v2/ability?limit=-1");
+            var content = await response.Content.ReadAsStringAsync();
+
+            return JsonDocument.Parse(content);
+        }
+
+        public async Task<JsonDocument> GetAllTypes()
+        {
+            var response = await _httpClient.GetAsync("https://pokeapi.co/api/v2/type?limit=-1");
+            var content = await response.Content.ReadAsStringAsync();
+
+            return JsonDocument.Parse(content);
         }
     }
 }
