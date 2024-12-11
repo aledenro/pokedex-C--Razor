@@ -1,6 +1,7 @@
 using PokedexWeb.Data;
 using PokedexWeb.Services;
 using Microsoft.EntityFrameworkCore;
+using PokedexWeb.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,10 @@ builder.Services.AddDbContext<ConnectionDbContext>(options => options.UseMySql(c
 builder.Services.AddRazorPages();
 builder.Services.AddHttpClient<PokeApiService>();
 builder.Services.AddScoped<TipoService>();
+builder.Services.AddScoped<HabilidadService>();
+
+builder.Services.AddScoped<TipoHelperIntialLoad>();
+builder.Services.AddScoped<HabilidadHelperInitialLoad>();
 
 var app = builder.Build();
 

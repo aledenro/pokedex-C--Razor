@@ -8,10 +8,12 @@ namespace PokedexWeb.Data
         public ConnectionDbContext(DbContextOptions<ConnectionDbContext> options) : base(options) { }   
 
         public DbSet<TipoModel> Tipo_G7 {  get; set; }
+        public DbSet<HabilidadModel> Habilidad_G7 { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<TipoModel>().ToTable("Tipo_G7");
+            modelBuilder.Entity<HabilidadModel>().ToTable("Habilidad_G7");
         }
 
     }

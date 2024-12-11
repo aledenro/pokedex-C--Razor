@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using PokedexWeb.Helpers;
 using PokedexWeb.Models;
 using PokedexWeb.Pages.Views;
 using PokedexWeb.Services;
@@ -11,58 +12,22 @@ namespace PokedexWeb.Pages
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
-        private readonly PokeApiService _pokeApiService;
-        private readonly TipoService _tipoService;
+        private readonly TipoHelperIntialLoad _tipoHelperIntialLoad;
+        private readonly HabilidadHelperInitialLoad _habilidadHelperInitialLoad;
 
-        public IndexModel(ILogger<IndexModel> logger, PokeApiService pokeApiService, TipoService tipoService)
+        public IndexModel(ILogger<IndexModel> logger, TipoHelperIntialLoad tipoHelperIntialLoad, HabilidadHelperInitialLoad habilidadHelperInitialLoad)
         {
             _logger = logger;
-            _pokeApiService = pokeApiService;
-            _tipoService = tipoService;
+            _tipoHelperIntialLoad = tipoHelperIntialLoad;
+            _habilidadHelperInitialLoad = habilidadHelperInitialLoad;
         }
 
 
         public async Task OnGetAsync()
         {
-            IEnumerable<TipoModel> typesDb = Enumerable.Empty<TipoModel>(); ;
+            await _tipoHelperIntialLoad.InitialLoadTipos();
 
-            try
-            {
-                typesDb = _tipoService.GetTipos();
-
-                if (typesDb != null && typesDb.Count() <= 0)
-                {
-                    var dataTypes = await _pokeApiService.GetAllAbilities();
-                    var types = dataTypes.RootElement.GetProperty("results");
-
-                    foreach (var type in types.EnumerateArray())
-                    {
-                        string typeName = type.GetProperty("name").GetString();
-
-                        string typeUrl = type.GetProperty("url").GetString();
-
-                        string idType = typeUrl.Replace("https://pokeapi.co/api/v2/ability/", "");
-                        idType = idType.Replace("/", "");
-
-                        TipoModel tipoModel = new TipoModel();
-                        tipoModel.id_tipo = Int32.Parse(idType);
-                        tipoModel.nombre = typeName;
-
-                        var added = _tipoService.AddTipo(tipoModel);
-
-                        System.Diagnostics.Debug.WriteLine(added);
-                    }
-                }
-            }
-            catch (Exception ex) {
-                System.Diagnostics.Debug.WriteLine(ex.Message);
-                return;
-            }
-
-            
-
-
-
+            await _habilidadHelperInitialLoad.InitialLoadTipos();
 
             //var dataAbilities = await _pokeApiService.GetAllAbilities();
             //var abilities = dataAbilities.RootElement.GetProperty("results");
