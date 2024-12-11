@@ -14,9 +14,11 @@ builder.Services.AddRazorPages();
 builder.Services.AddHttpClient<PokeApiService>();
 builder.Services.AddScoped<TipoService>();
 builder.Services.AddScoped<HabilidadService>();
+builder.Services.AddScoped<PokemonService>();
 
 builder.Services.AddScoped<TipoHelperIntialLoad>();
 builder.Services.AddScoped<HabilidadHelperInitialLoad>();
+builder.Services.AddScoped<PokemonHelperInitialLoad>();
 
 var app = builder.Build();
 
