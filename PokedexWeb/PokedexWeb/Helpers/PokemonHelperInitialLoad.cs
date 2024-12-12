@@ -8,11 +8,13 @@ namespace PokedexWeb.Helpers
     {
         private readonly PokeApiService _pokeApiService;
         private readonly PokemonService _pokemonService;
+        private readonly PokemonTipoService _pokemonTipoService;
 
-        public PokemonHelperInitialLoad(PokeApiService pokeApiService, PokemonService pokemonService)
+        public PokemonHelperInitialLoad(PokeApiService pokeApiService, PokemonService pokemonService, PokemonTipoService pokemonTipoService)
         {
             _pokeApiService = pokeApiService;
             _pokemonService = pokemonService;
+            _pokemonTipoService = pokemonTipoService;
         }
 
 
@@ -65,6 +67,25 @@ namespace PokedexWeb.Helpers
                                     pokemonModel.peso = peso;
 
                                     _pokemonService.AddPokemon(pokemonModel);
+
+                                    var tipos = detailPokemon.RootElement.GetProperty("types").EnumerateArray();
+
+                                    foreach (var tipo in tipos) {
+                                        string tipoNombre = tipo.GetProperty("type").GetProperty("name").GetString();
+                                        string urlType = tipo.GetProperty("type").GetProperty("url").GetString();
+
+
+                                        string idType = urlType.Replace("https://pokeapi.co/api/v2/type/", "");
+                                        idType = idType.Replace("/", "");
+
+                                        PokemonTipoModel pokemonTipo = new PokemonTipoModel();
+                                        pokemonTipo.id_pokemon = id;
+                                        pokemonTipo.id_tipo = Int32.Parse(idType);
+
+                                        _pokemonTipoService.AddPokemonTipo(pokemonTipo);
+                                    }
+
+                                    //_pokemonTipoService.AddPokemonTipo(Pokemon);
                                 }
                             }
                         }
@@ -76,6 +97,11 @@ namespace PokedexWeb.Helpers
                 System.Diagnostics.Debug.WriteLine(ex.Message);
                 return;
             }
+        }
+
+        private void addTipoPokemon(int idPokemon, int idTipo)
+        {
+            
         }
     }
 }
