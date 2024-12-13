@@ -37,5 +37,9 @@ namespace PokedexWeb.Services
             return _dbContext.Pokemon_G7.Max(p => p.id_pokemon);
         }
 
+        public PokemonModel GetPokemon(int id) {
+            return _dbContext.Pokemon_G7.Where(x => x.id_pokemon == id).Include(p => p.PokemonTipos).ThenInclude(pt => pt.Tipo).Include(p => p.PokemonHabilidades).ThenInclude(ph => ph.Habilidad).Single();
+        }
+
     }
 }

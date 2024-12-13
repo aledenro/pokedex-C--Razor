@@ -35,7 +35,7 @@
                                     <img class="text-center" style="display:block; margin:auto;" src="@pokemon.foto" alt="@pokemon.nombre">
                                 </td>
                                 <td>@pokemon.id_pokemon</td>
-                                <td><a href="/Views/Pokemon/Detalle">@pokemon.nombre</a></td>
+                                <td><a href="/Views/Pokemon/Detalle?id=@pokemon.id_pokemon">@pokemon.nombre</a></td>
                                 <td>
                                     @foreach (var tipo in pokemon.PokemonTipos)
                                     {
