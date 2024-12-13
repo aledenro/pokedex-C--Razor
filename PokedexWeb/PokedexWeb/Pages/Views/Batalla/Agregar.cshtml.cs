@@ -39,7 +39,7 @@ namespace PokedexWeb.Pages.Views.Batalla
                 return Page();
             }
 
-            return RedirectToPage("/Views/Batalla/Index");
+            return RedirectToPage("/Views/Batalla/Batalla");
         }
     }
 }
