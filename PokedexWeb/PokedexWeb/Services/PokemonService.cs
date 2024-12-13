@@ -1,4 +1,5 @@
-﻿using PokedexWeb.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using PokedexWeb.Data;
 using PokedexWeb.Models;
 
 namespace PokedexWeb.Services
@@ -14,7 +15,7 @@ namespace PokedexWeb.Services
 
         public IEnumerable<PokemonModel> GetPokemones()
         {
-            return _dbContext.Pokemon_G7.ToList();
+             return _dbContext.Pokemon_G7.Include(p => p.PokemonTipos).ThenInclude(pt => pt.Tipo).ToList();
         }
 
         public bool AddPokemon(PokemonModel pokemon)

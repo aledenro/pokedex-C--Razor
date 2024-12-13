@@ -28,33 +28,35 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>
-                                <img class="text-center" style="display:block; margin:auto;" src="https://img.pokemondb.net/sprites/black-white/anim/normal/bulbasaur.gif" alt="Bulbasaur">
-                            </td>
-                            <td>001</td>
-                            <td><a href="/Views/Pokemon/Detalle">Bulbasaur</a></td>
-                            <td>
-                                <p>
-                                    <span class="badge text-bg-success rounded-pill" id="planta">Planta</span>
-                                </p>
-                                <p>
-                                    <span class="badge text-bg-success rounded-pill" id="veneno">Veneno</span>
-                                </p>
-                            </td>
-                            <td>Espesura</td>
-                            <td>6.9 kg</td>
-                            <td>0.7 m</td>
-                            <td class="text-center">
-                                <button class="button icon">
-                                    <a href="/Views/Pokemon/Editar" type="button" class="text-white text-decoration-none" title="Modificar Pokemon"><i class="fa-solid fa-pen"></i></a>
-                                </button>
-                                <button class="button icon">
-                                    <a href="/Views/Pokemon/Eliminar" type="button" class="text-white text-decoration-none" title="Eliminar Pokemon"><i class="fa-solid fa-trash"></i></a>
-                                </button>
-                            </td>
-                        </tr>
-
+                        @foreach (var pokemon in Model.Pokemones)
+                        {
+                            <tr>
+                                <td>
+                                    <img class="text-center" style="display:block; margin:auto;" src="@pokemon.foto" alt="@pokemon.nombre">
+                                </td>
+                                <td>@pokemon.id_pokemon</td>
+                                <td><a href="/Views/Pokemon/Detalle">@pokemon.nombre</a></td>
+                                <td>
+                                    @foreach (var tipo in pokemon.PokemonTipos)
+                                    {
+                                        <p>
+                                            <span class="badge text-bg-success rounded-pill">@tipo.Tipo.nombre</span>
+                                        </p>
+                                    }
+                                </td>
+                                <td>Espesura</td>
+                                <td>@pokemon.peso kg</td>
+                                <td>@pokemon.altura m</td>
+                                <td class="text-center">
+                                    <button class="button icon">
+                                        <a href="/Views/Pokemon/Editar" type="button" class="text-white text-decoration-none" title="Modificar Pokemon"><i class="fa-solid fa-pen"></i></a>
+                                    </button>
+                                    <button class="button icon">
+                                        <a href="/Views/Pokemon/Eliminar" type="button" class="text-white text-decoration-none" title="Eliminar Pokemon"><i class="fa-solid fa-trash"></i></a>
+                                    </button>
+                                </td>
+                            </tr>
+                        }
                     </tbody>
                 </table>
             </div>

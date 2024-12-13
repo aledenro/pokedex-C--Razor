@@ -8,5 +8,7 @@ namespace PokedexWeb.Models
         [Key]
         public int id_tipo { get; set; }
         public string nombre { get; set; }
+
+        public ICollection<PokemonTipoModel> PokemonTipos { get; set; }
     }
 }

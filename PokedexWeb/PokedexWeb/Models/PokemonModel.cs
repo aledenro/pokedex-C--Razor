@@ -10,5 +10,8 @@ namespace PokedexWeb.Models
         public int altura { get; set; }
         public int peso { get; set; }
         public string foto { get; set; }
+
+        public ICollection<PokemonTipoModel> PokemonTipos { get; set; }
+        public ICollection<PokemonHabilidadModel> PokemonHabilidades { get; set; }
     }
 }
