@@ -1,59 +1,60 @@
 ﻿@page
 @model PokedexWeb.Pages.Views.Pokemon.EditarModel
 @{
-    ViewData["Title"] = "Editar Pokémon";
 }
 <h1 class="text-center my-3">Editar Pokémon</h1>
 <div class="mx-5">
     <div class="row  d-flex justify-content-center">
-        <form class="mt-4 col-10">
+        <form class="mt-4 col-10" method="post">
             <div class="mb-3">
-                <input type="number" class="form-control" id="id_pokemon" required disabled hidden>
+                <input type="number" class="form-control" id="id_pokemon" name="id_pokemon" required readonly hidden value="@Model.Pokemon.id_pokemon">
             </div>
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre del Pokémon</label>
-                <input type="text" class="form-control" id="nombre" placeholder="Ej. Pikachu, Eevee, Mewtwo" required>
+                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ej. Pikachu, Eevee, Mewtwo" required value="@Model.Pokemon.nombre">
             </div>
             <div class="row">
                 <div class="col mb-3">
                     <label for="tipo" class="form-label">Tipo:</label>
-                    <select class="form-select" data-coreui-search="true" required id="tipo">
-                        <option value="fuego" selected>Fuego</option>
-                        <option value="hielo">Hielo</option>
-                        <option value="volador">Volador</option>
-                        <option value="psiquico">Psiquico</option>
-                        <option value="electrico">Eléctrico</option>
+                    <select class="form-select" data-coreui-search="true" required id="tipo" asp-for="IdsTipos" multiple>
+                        @foreach (var tipo in Model.Tipos)
+                        {
+                            @if (Model.IdsTipos.Contains(tipo.id_tipo))
+                            {
+                                <option value="@tipo.id_tipo" selected>@tipo.nombre</option>
+                            }else{
+                                <option value="@tipo.id_tipo">@tipo.nombre</option>
+                            }
+                        }
                     </select>
                 </div>
                 <div class="col mb-3">
                     <label for="debilidad" class="form-label">Habilidad:</label>
 
-                    <select class="form-select" data-coreui-search="true" required id="debilidad">
-                        <option value="" selected>Absorbe agua</option>
-                        <option value="">Absorbe electricidad</option>
-                        <option value="">Aclimatación</option>
-                        <option value="">Allagas</option>
-                        <option value="">Pereza</option>
+                    <select class="form-select" data-coreui-search="true" required id="habilidad" asp-for="IdsHabilidades" multiple>
+                        @foreach (var habilidad in Model.Habilidades)
+                        {
+                            @if (Model.IdsHabilidades.Contains(habilidad.id_habilidad))
+                            {
+                                <option value="@habilidad.id_habilidad" selected>@habilidad.nombre</option>
+                            }
+                            else
+                            {
+                                <option value="@habilidad.id_habilidad">@habilidad.nombre</option>
+                            }
+                        }
                     </select>
                 </div>
             </div>
             <div class="row">
                 <div class="col mb-3">
                     <label for="altura" class="form-label">Altura:</label>
-                    <input type="number" class="form-control" id="altura" required>
+                    <input type="number" class="form-control" id="altura" name="altura" required value="@Model.Pokemon.altura">
                 </div>
                 <div class="col mb-3">
                     <label for="peso" class="form-label">Peso:</label>
-                    <input type="number" class="form-control" id="peso" required>
+                    <input type="number" class="form-control" id="peso" name="peso" required value="@Model.Pokemon.peso">
                 </div>
-            </div>
-            <div class="col mb-3">
-                <label for="evoluciones" class="form-label">Evoluciones:</label>
-                <select class="form-select" data-coreui-search="true" required id="evoluciones" multiple>
-                    <option value="Bulbasaur" selected>Bulbasaur 001</option>
-                    <option value="Ivysaur">Ivysaur 002</option>
-                    <option value="Venusaur">Venusaur 003</option>
-                </select>
             </div>
             <div class="d-flex justify-content-end">
                 <button class="button-blue text-white py-2 mb-3" type="submit">

@@ -31,5 +31,16 @@ namespace PokedexWeb.Services
                 return false;
             }
         }
+
+        public void DeletePokemonHabilidad(int idPokemon)
+        {
+            var pokemonTipos = _dbContext.Pokemon_Habilidad_G7
+           .Where(pt => pt.id_pokemon == idPokemon)
+           .ToList();
+
+            _dbContext.Pokemon_Habilidad_G7.RemoveRange(pokemonTipos);
+
+            _dbContext.SaveChanges();
+        }
     }
 }

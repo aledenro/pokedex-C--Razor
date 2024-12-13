@@ -41,5 +41,22 @@ namespace PokedexWeb.Services
             return _dbContext.Pokemon_G7.Where(x => x.id_pokemon == id).Include(p => p.PokemonTipos).ThenInclude(pt => pt.Tipo).Include(p => p.PokemonHabilidades).ThenInclude(ph => ph.Habilidad).Single();
         }
 
+        public void EditPokemon(PokemonModel pokemon) {
+
+            var existingPokemon = _dbContext.Pokemon_G7.Find(pokemon.id_pokemon);
+
+            if (existingPokemon != null)
+            {
+                existingPokemon.nombre = pokemon.nombre;
+                existingPokemon.altura = pokemon.altura;
+                existingPokemon.peso = pokemon.peso;
+
+                _dbContext.SaveChanges();
+            }
+            else
+            {
+                throw new Exception("El Pokémon no existe en la base de datos.");
+            }
+        }
     }
 }
