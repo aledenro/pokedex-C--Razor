@@ -15,6 +15,7 @@ namespace PokedexWeb.Data
         public DbSet<UsuarioModel> Usuario_G7 { get; set; }
         public DbSet<RolModel> Rol_G7 { get; set; }
         public DbSet<UsuarioRolModel> Usuario_Rol_G7 { get; set; }
+        public DbSet<RetoModel> Reto_G7 { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -65,6 +66,22 @@ namespace PokedexWeb.Data
                 .HasOne(ur => ur.Rol)
                 .WithMany(r => r.UsuarioRoles)
                 .HasForeignKey(ur => ur.id_rol);
+
+            modelBuilder.Entity<RetoModel>()
+                .ToTable("Reto_G7")
+                .HasKey(r => r.id_reto);
+
+            modelBuilder.Entity<RetoModel>()
+                .HasOne(r => r.Retador)
+                .WithMany(u => u.RetoRetador)
+                .HasForeignKey(r => r.id_retador)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<RetoModel>()
+                .HasOne(r => r.Contendiente)
+                .WithMany(u => u.RetoContendiente)
+                .HasForeignKey(r => r.id_contendiente)
+                .OnDelete(DeleteBehavior.Restrict);
 
         }
 

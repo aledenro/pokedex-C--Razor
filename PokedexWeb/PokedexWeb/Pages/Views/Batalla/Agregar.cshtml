@@ -1,6 +1,11 @@
 ﻿@page
 @model PokedexWeb.Pages.Views.Batalla.AgregarModel
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
 @{
+    var username = HttpContextAccessor.HttpContext.Session.GetString("Username");
+    var id = HttpContextAccessor.HttpContext.Session.GetString("UserId");
+    var loggedIn = !string.IsNullOrEmpty(username);
     ViewData["Title"] = "Registrar Batalla";
 }
 
@@ -8,11 +13,16 @@
 <h1 class="text-center my-3">Registrar Batalla</h1>
 <div class="mx-5">
     <div class="row  d-flex justify-content-center">
-        <form class="mt-4 col-10">
+        <form class="mt-4 col-10" method="post">
             <div class="row align-items-center">
                 <div class="col mb-3">
-                    <label for="retador" class="form-label">Entrenador 1:</label>
-                    <input type="number" class="form-control" id="retador" required>
+                    <label for="id_retador" class="form-label">Entrenador 1:</label>
+                    <select class="form-control" id="id_retador" name="id_retador" required>
+                        @foreach (var user in Model.Usuarios)
+                        {
+                            <option value="@user.id_usuario">@user.nombre</option>
+                        }
+                    </select> 
                 </div>
 
                 <div class="col-2 text-center d-flex justify-content-center align-items-center">
@@ -20,17 +30,22 @@
                 </div>
 
                 <div class="col mb-3">
-                    <label for="contrincante" class="form-label">Entrenador 2:</label>
-                    <input type="number" class="form-control" id="contrincante" required>
+                    <label for="id_contendiente" class="form-label">Entrenador 2:</label>
+                    <select class="form-control" id="id_contendiente" name="id_contendiente" required>
+                        @foreach (var user in Model.Usuarios)
+                        {
+                            <option value="@user.id_usuario">@user.nombre</option>
+                        }
+                    </select>
                 </div>
             </div>
             <div class="mb-3">
-                <label for="nombre" class="form-label">Lugar:</label>
-                <input type="text" class="form-control" id="nombre" placeholder="Ej. Gimnasio Pokémon de Ciudad Pradera" required>
+                <label for="lugar" class="form-label">Lugar:</label>
+                <input type="text" class="form-control" id="lugar" name="lugar" placeholder="Ej. Gimnasio Pokémon de Ciudad Pradera" required>
             </div>
             <div class="col mb-3">
                 <label for="fecha" class="form-label">Fecha:</label>
-                <input type="date" class="form-control" id="fecha" required>
+                <input type="date" class="form-control" id="fecha" name="fecha" required>
 
             </div>
             <div class="d-flex justify-content-end">

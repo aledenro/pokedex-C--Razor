@@ -16,8 +16,8 @@ namespace PokedexWeb.Services
         public UsuarioModel GetUsuarioByEmail(string correo)
         {
             return _dbContext.Usuario_G7
-                .Include(u => u.UsuarioRoles) 
-                .ThenInclude(ur => ur.Rol)   
+                .Include(u => u.UsuarioRoles)
+                .ThenInclude(ur => ur.Rol)
                 .SingleOrDefault(u => u.username == correo);
         }
 
@@ -29,10 +29,16 @@ namespace PokedexWeb.Services
                 _dbContext.SaveChanges();
                 return true;
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 System.Diagnostics.Debug.WriteLine(ex.Message);
                 return false;
             }
+        }
+
+        public IEnumerable<UsuarioModel> GetUsersBasicInfo()
+        {
+            return _dbContext.Usuario_G7.Select(u => new UsuarioModel {id_usuario = u.id_usuario, nombre = u.nombre}).ToList();
         }
     }
 }

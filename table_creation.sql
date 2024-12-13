@@ -31,6 +31,8 @@ CREATE TABLE Reto_G7(
     id_contendiente INT NOT NULL,
     Estado VARCHAR(25) NOT NULL,
     ganador VARCHAR(25),
+    lugar VARCHAR(500),
+    fecha DATE,
     FOREIGN KEY (id_retador) REFERENCES Usuario_G7(id_usuario),
     FOREIGN KEY (id_contendiente) REFERENCES Usuario_G7(id_usuario)
 );

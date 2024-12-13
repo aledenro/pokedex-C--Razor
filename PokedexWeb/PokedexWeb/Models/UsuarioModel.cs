@@ -15,5 +15,8 @@ namespace PokedexWeb.Models
         public bool estado {  get; set; }
 
         public ICollection<UsuarioRolModel> UsuarioRoles { get; set; }
+
+        public ICollection<RetoModel> RetoRetador { get; set; }
+        public ICollection<RetoModel> RetoContendiente { get; set; }
     }
 }
