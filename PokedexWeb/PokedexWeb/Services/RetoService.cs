@@ -30,5 +30,25 @@ namespace PokedexWeb.Services
                 return false;
             }
         }
+
+        public RetoModel GetReto(int id)
+        {
+            return _dbContext.Reto_G7.Where(r => r.id_reto == id).Single();
+        }
+
+        public bool EditReto(RetoModel reto)
+        {
+            try
+            {
+                _dbContext.Entry(reto).State = EntityState.Modified;
+                _dbContext.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+                return false;
+            }
+        }
     }
 }

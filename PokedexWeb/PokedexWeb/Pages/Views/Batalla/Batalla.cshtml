@@ -33,32 +33,29 @@
                                     @reto.Retador.nombre
                                     @if (reto.ganador != null && reto.ganador == "Retador")
                                     {
-                                        <span class="badge-circle won"></span>
+                                        <span class="badge-circle won" title="Ganador"></span>
                                     }
                                     @if (reto.ganador != null && reto.ganador == "Contendiente")
                                     {
-                                        <span class="badge-circle lost"></span>
+                                        <span class="badge-circle lost" title="Perdedor"></span>
                                     }
                                 </td>
                                 <td>
                                     @reto.Contendiente.nombre
                                     @if (reto.ganador != null && reto.ganador == "Contendiente")
                                     {
-                                        <span class="badge-circle won"></span>
+                                        <span class="badge-circle won" title="Ganador"></span>
                                     }
                                     @if (reto.ganador != null && reto.ganador == "Retador")
                                     {
-                                        <span class="badge-circle lost"></span>
+                                        <span class="badge-circle lost" title="Perdedor"></span>
                                     }
                                 </td>
                                 <td>@reto.lugar</td>
                                 <td>@reto.fecha</td>
                                 <td>
                                     <button class="button icon">
-                                        <a href="/Views/Pokemon/Editar" type="button" class="text-white text-decoration-none" title="Modificar Pokemon"><i class="fa-solid fa-pen"></i></a>
-                                    </button>
-                                    <button class="button icon">
-                                        <a href="/Views/Pokemon/Eliminar" type="button" class="text-white text-decoration-none" title="Eliminar Pokemon"><i class="fa-solid fa-trash"></i></a>
+                                        <a href="/Views/Batalla/Editar?id=@reto.id_reto" type="button" class="text-white text-decoration-none" title="Modificar Batalla"><i class="fa-solid fa-pen"></i></a>
                                     </button>
                                 </td>
                             </tr>

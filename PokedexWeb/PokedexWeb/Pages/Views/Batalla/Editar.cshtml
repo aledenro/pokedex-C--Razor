@@ -1,0 +1,96 @@
+﻿@page
+@model PokedexWeb.Pages.Views.Batalla.EditarModel
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    var username = HttpContextAccessor.HttpContext.Session.GetString("Username");
+    var id = HttpContextAccessor.HttpContext.Session.GetString("UserId");
+    var loggedIn = !string.IsNullOrEmpty(username);
+    ViewData["Title"] = "Editar Batalla";
+}
+
+
+<h1 class="text-center my-3">Editar Batalla</h1>
+<div class="mx-5">
+    <div class="row  d-flex justify-content-center">
+        <form class="mt-4 col-10" method="post">
+            <div class="mb-3">
+                <label for="id_reto" class="form-label">ID Reto:</label>
+                <input type="number" class="form-control" id="id_reto" name="id_reto" placeholder="Ej. Gimnasio Pokémon de Ciudad Pradera" required readonly value="@Model.Reto.id_reto">
+            </div>
+            <div class="row align-items-center">
+                <div class="col mb-3">
+                    <label for="id_retador" class="form-label">Entrenador 1:</label>
+                    <select class="form-control" id="id_retador" name="id_retador" required>
+                        @foreach (var user in Model.Usuarios)
+                        {
+                            @if (Model.Reto.id_retador == user.id_usuario)
+                            {
+                                <option value="@user.id_usuario" selected>@user.nombre</option>
+                                continue;
+                            }
+                            else
+                            {
+                                <option value="@user.id_usuario">@user.nombre</option>
+                            }
+                        }
+                    </select>
+                </div>
+
+                <div class="col-2 text-center d-flex justify-content-center align-items-center">
+                    <span class="h4" style="font-family: 'Press Start 2P', serif;">vs</span>
+                </div>
+
+                <div class="col mb-3">
+                    <label for="id_contendiente" class="form-label">Entrenador 2:</label>
+                    <select class="form-control" id="id_contendiente" name="id_contendiente" required>
+                        @foreach (var user in Model.Usuarios)
+                        {
+                            @if (Model.Reto.id_contendiente == user.id_usuario)
+                            {
+                                <option value="@user.id_usuario" selected>@user.nombre</option>
+                                continue;
+                            }
+                            else
+                            {
+                                <option value="@user.id_usuario">@user.nombre</option>
+                            }
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="lugar" class="form-label">Lugar:</label>
+                <input type="text" class="form-control" id="lugar" name="lugar" placeholder="Ej. Gimnasio Pokémon de Ciudad Pradera" required value="@Model.Reto.lugar">
+            </div>
+            <div class="col mb-3">
+                <label for="fecha" class="form-label">Fecha:</label>
+                <input type="date" class="form-control" id="fecha" name="fecha" required value="@Model.Reto.fecha.ToString("yyyy-MM-dd")">
+
+            </div>
+            <div class="col mb-3">
+                <label for="Estado" class="form-label">Estado:</label>
+                <select class="form-control" id="Estado" name="Estado" required>
+                    <option value="Pendiente">Pendiente</option>
+                    <option value="Cancelado">Cancelado</option>
+                    <option value="Completada">Completada</option>
+                </select>
+            </div>
+            <div class="col mb-3">
+                <label for="ganador" class="form-label">Ganador:</label>
+                <select class="form-control" id="ganador" name="ganador">
+                    <option value="" selected></option>
+                    <option value="Retador">Retador</option>
+                    <option value="Contendiente">Contendiente</option>
+                </select>
+            </div>
+            <div class="d-flex justify-content-end">
+                <button class="button-blue text-white py-2 mb-3" type="submit">
+                    Guardar Cambios
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
