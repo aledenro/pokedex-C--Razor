@@ -96,6 +96,7 @@ CREATE TABLE Usuario_Pokemon_G7(
 	id_usuario_pokemon INT NOT NULL PRIMARY  KEY AUTO_INCREMENT,
     id_usuario INT NOT NULL,
 	id_pokemon INT NOT NULL,
+    nombre VARCHAR(50) NOT NULL,
     FOREIGN KEY (id_usuario) REFERENCES Usuario_G7(id_usuario),
     FOREIGN KEY (id_pokemon) REFERENCES Pokemon_G7(id_pokemon)
 );
