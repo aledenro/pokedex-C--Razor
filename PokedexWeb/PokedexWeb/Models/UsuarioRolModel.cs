@@ -11,5 +11,6 @@ namespace PokedexWeb.Models
 
         public UsuarioModel Usuario { get; set; }
         public RolModel Rol { get; set; }
+
     }
 }

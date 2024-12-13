@@ -1,0 +1,39 @@
+﻿@page
+@model PokedexWeb.Pages.Views.Usuario.AdminUsersModel
+@{
+    ViewData["Title"] = "Usuarios";
+}
+<h1 class="text-center my-3">Administrar Usuarios</h1>
+<div class="mx-5">
+    <div class="row">
+        <div class="md-auto">
+            <div class="table-responsive ">
+                <table class="table-style  align-middle">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nombre</th>
+                            <th>Usuario</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                         @foreach (var usuario in Model.Usuarios)
+                         {
+                            <tr>
+                                <td>@usuario.id_usuario</td>
+                                <td>@usuario.nombre</td>
+                                <td>@usuario.username</td>
+                                <td class="text-center">
+                                    <button class="button icon">
+                                        <a href="/Views/Usuario/Editar?id=@usuario.id_usuario" type="button" class="text-white text-decoration-none" title="Editar Usuario"><i class="fa-solid fa-pen"></i></a>
+                                    </button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

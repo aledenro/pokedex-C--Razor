@@ -40,5 +40,22 @@ namespace PokedexWeb.Services
         {
             return _dbContext.Usuario_G7.Select(u => new UsuarioModel {id_usuario = u.id_usuario, nombre = u.nombre}).ToList();
         }
+
+        public List<UsuarioModel> GetAllUsuarios()
+        {
+            return _dbContext.Usuario_G7
+                .Include(u => u.UsuarioRoles)
+                .ThenInclude(ur => ur.Rol)
+                .ToList();
+        }
+
+        public UsuarioModel GetUsuarioById(int id)
+        {
+            return _dbContext.Usuario_G7
+                .Include(u => u.UsuarioRoles)
+                .ThenInclude(ur => ur.Rol)
+                .SingleOrDefault(u => u.id_usuario == id);
+        }
+
     }
 }
