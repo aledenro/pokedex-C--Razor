@@ -1,0 +1,25 @@
+﻿@page
+@model PokedexWeb.Pages.Views.Usuario.AgregarModel
+@{
+}
+
+<h1 class="text-center my-3">Agregar a mi Equipo</h1>
+<div class="mx-5">
+    <div class="row  d-flex justify-content-center">
+        <form class="mt-4 col-10" method="post">
+            <div class="mb-3">
+                <input type="number" class="form-control" id="id_pokemon" name="id_pokemon" required readonly hidden>
+            </div>
+            <select class="form-select mb-3">
+                <option selected>Pokémon</option>
+                <option value="">One</option>
+            </select>
+            <div class="d-flex justify-content-end">
+                <button class="button-blue text-white py-2 mb-3" type="submit">
+                    Confirmar
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>
