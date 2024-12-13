@@ -15,7 +15,7 @@ namespace PokedexWeb.Services
 
         public IEnumerable<PokemonModel> GetPokemones()
         {
-             return _dbContext.Pokemon_G7.Include(p => p.PokemonTipos).ThenInclude(pt => pt.Tipo).ToList();
+             return _dbContext.Pokemon_G7.Include(p => p.PokemonTipos).ThenInclude(pt => pt.Tipo).Include(p => p.PokemonHabilidades).ThenInclude(ph => ph.Habilidad).ToList();
         }
 
         public bool AddPokemon(PokemonModel pokemon)

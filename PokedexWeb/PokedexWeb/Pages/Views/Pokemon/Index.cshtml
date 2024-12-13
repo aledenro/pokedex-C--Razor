@@ -44,15 +44,19 @@
                                         </p>
                                     }
                                 </td>
-                                <td>Espesura</td>
+                                <td>
+                                    @foreach (var habilidad in pokemon.PokemonHabilidades) {
+                                        <p>@habilidad.Habilidad.nombre</p>
+                                    }
+                                </td>
                                 <td>@pokemon.peso kg</td>
                                 <td>@pokemon.altura m</td>
                                 <td class="text-center">
                                     <button class="button icon">
-                                        <a href="/Views/Pokemon/Editar" type="button" class="text-white text-decoration-none" title="Modificar Pokemon"><i class="fa-solid fa-pen"></i></a>
+                                        <a href="/Views/Pokemon/Editar/@pokemon.id_pokemon" type="button" class="text-white text-decoration-none" title="Modificar Pokemon"><i class="fa-solid fa-pen"></i></a>
                                     </button>
                                     <button class="button icon">
-                                        <a href="/Views/Pokemon/Eliminar" type="button" class="text-white text-decoration-none" title="Eliminar Pokemon"><i class="fa-solid fa-trash"></i></a>
+                                        <a href="/Views/Pokemon/Eliminar/@pokemon.id_pokemon" type="button" class="text-white text-decoration-none" title="Eliminar Pokemon"><i class="fa-solid fa-trash"></i></a>
                                     </button>
                                 </td>
                             </tr>

@@ -19,13 +19,26 @@ namespace PokedexWeb.Data
                 .HasMany(t => t.PokemonTipos)
                 .WithOne(pt => pt.Tipo)
                 .HasForeignKey(pt => pt.id_tipo); 
-            modelBuilder.Entity<HabilidadModel>().ToTable("Habilidad_G7");
+
+            modelBuilder.Entity<HabilidadModel>().ToTable("Habilidad_G7")
+                .HasMany(h => h.PokemonHabilidades)
+                .WithOne(ph => ph.Habilidad)
+                .HasForeignKey(ph => ph.id_habilidad);
+
             modelBuilder.Entity<PokemonModel>().ToTable("Pokemon_G7")
                 .HasMany(p => p.PokemonTipos)
                 .WithOne(pt => pt.Pokemon)
                 .HasForeignKey(pt => pt.id_pokemon);
+
+            modelBuilder.Entity<PokemonModel>().ToTable("Pokemon_G7")
+                .HasMany(p => p.PokemonHabilidades)
+                .WithOne(ph => ph.Pokemon)
+                .HasForeignKey(ph => ph.id_pokemon);
+
             modelBuilder.Entity<PokemonTipoModel>().ToTable("Pokemon_Tipo_G7");
+
             modelBuilder.Entity<PokemonHabilidadModel>().ToTable("Pokemon_Habilidad_G7");
+
         }
 
     }
