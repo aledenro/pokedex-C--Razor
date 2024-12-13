@@ -32,5 +32,10 @@ namespace PokedexWeb.Services
                 return false;
             }
         }
+        public int GetMaxPokemonId()
+        {
+            return _dbContext.Pokemon_G7.Max(p => p.id_pokemon);
+        }
+
     }
 }
