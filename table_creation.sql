@@ -92,6 +92,18 @@ CREATE TABLE Detalle_Enfermeria_G7(
     FOREIGN KEY (id_enfermero) REFERENCES Usuario_G7(id_usuario)
 );
 
+CREATE TABLE Usuario_Pokemon_G7(
+	id_usuario_pokemon INT NOT NULL PRIMARY  KEY AUTO_INCREMENT,
+    id_usuario INT NOT NULL,
+	id_pokemon INT NOT NULL,
+    FOREIGN KEY (id_usuario) REFERENCES Usuario_G7(id_usuario),
+    FOREIGN KEY (id_pokemon) REFERENCES Pokemon_G7(id_pokemon)
+);
+
+INSERT INTO Usuario_G7(username, password, estado, nombre)
+VALUES	('aledenro@gmail.com', '1234', true, 'Alejandro Denver'),
+('test@test.com', '1234', true, 'test');
+
 INSERT  INTO Rol_G7(rol)
 VALUES('Entrenador'),
 ('Admin'),

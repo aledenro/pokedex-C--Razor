@@ -40,12 +40,15 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Views/Pokemon/Index">Pokedex</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Views/Enfermeria/Index">Centro Pokémon</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Views/Batalla/Batalla">Batallas</a>
-                        </li>
+                        @if (loggedIn)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Views/Enfermeria/Index">Centro Pokémon</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Views/Batalla/Batalla">Batallas</a>
+                            </li>
+                        }
                     </ul>
                     <div class="d-flex align-items-center">
                         <ul class="navbar-nav">
