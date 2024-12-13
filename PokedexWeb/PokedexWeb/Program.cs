@@ -19,6 +19,7 @@ builder.Services.AddScoped<PokemonTipoService>();
 builder.Services.AddScoped<PokemonHabilidadService>();
 builder.Services.AddScoped<UsuarioService>();
 builder.Services.AddScoped<RetoService>();
+builder.Services.AddScoped<EnfermeriaService>();
 
 builder.Services.AddScoped<TipoHelperIntialLoad>();
 builder.Services.AddScoped<HabilidadHelperInitialLoad>();

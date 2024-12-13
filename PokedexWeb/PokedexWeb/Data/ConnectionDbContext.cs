@@ -16,6 +16,7 @@ namespace PokedexWeb.Data
         public DbSet<RolModel> Rol_G7 { get; set; }
         public DbSet<UsuarioRolModel> Usuario_Rol_G7 { get; set; }
         public DbSet<RetoModel> Reto_G7 { get; set; }
+        public DbSet<EnfermeriaModel> Enfermeria_G7 { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -47,12 +48,10 @@ namespace PokedexWeb.Data
                  .ToTable("Usuario_G7")
                  .HasKey(u => u.id_usuario);
 
-            // Configuración de la tabla Rol
             modelBuilder.Entity<RolModel>()
                 .ToTable("Rol_G7")
                 .HasKey(r => r.id_rol);
 
-            // Configuración de la tabla UsuarioRol
             modelBuilder.Entity<UsuarioRolModel>()
                 .ToTable("Usuario_Rol_G7")
                 .HasKey(ur => ur.id_usuario_rol);
@@ -74,15 +73,31 @@ namespace PokedexWeb.Data
             modelBuilder.Entity<RetoModel>()
                 .HasOne(r => r.Retador)
                 .WithMany(u => u.RetoRetador)
-                .HasForeignKey(r => r.id_retador)
-                .OnDelete(DeleteBehavior.Restrict);
+                .HasForeignKey(r => r.id_retador);
 
             modelBuilder.Entity<RetoModel>()
                 .HasOne(r => r.Contendiente)
                 .WithMany(u => u.RetoContendiente)
-                .HasForeignKey(r => r.id_contendiente)
-                .OnDelete(DeleteBehavior.Restrict);
+                .HasForeignKey(r => r.id_contendiente);
 
+            modelBuilder.Entity<EnfermeriaModel>()
+            .ToTable("Detalle_Enfermeria_G7")
+            .HasKey(d => d.id_detalle_enfermeria);
+
+            modelBuilder.Entity<EnfermeriaModel>()
+                .HasOne(d => d.Entrenador)
+                .WithMany(u => u.EnfermeriaEntrenador)
+                .HasForeignKey(d => d.id_entrenador);
+
+            modelBuilder.Entity<EnfermeriaModel>()
+               .HasOne(d => d.Enfermero)
+               .WithMany(u => u.EnfermeriaEnfermero)
+               .HasForeignKey(d => d.id_enfermero);
+
+            modelBuilder.Entity<EnfermeriaModel>()
+                .HasOne(d => d.Pokemon)
+                .WithMany(p => p.PokemonEnfermeria)
+                .HasForeignKey(d => d.id_pokemon);
         }
 
     }

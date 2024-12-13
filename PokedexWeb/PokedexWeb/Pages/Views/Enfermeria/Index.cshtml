@@ -1,6 +1,9 @@
 ﻿@page
 @model PokedexWeb.Pages.Views.Enfermeria.IndexModel
+@inject IHttpContextAccessor HttpContextAccessor
 @{
+    var username = HttpContextAccessor.HttpContext.Session.GetString("Username");
+    var id = HttpContextAccessor.HttpContext.Session.GetString("UserId");
     ViewData["Title"] = "Enfermería";
 
 }
@@ -23,23 +26,31 @@
                             <th>Nombre</th>
                             <th>Peso</th>
                             <th>Entrenador</th>
-                            <th>Enfermero</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>001</td>
-                            <td><a href="/Views/Pokemon/Detalle">Bulbasaur</a></td>
-                            <td>6.9 kg</td>
-                            <td>Ash</td>
-                            <td>Joy</td>
-                            <td class="text-center" width="25%">
-                                <button class="button py-2">
-                                    <a href="" type="button" class="text-white text-decoration-none">Dar de alta</a>
-                                </button>
-                            </td>
-                        </tr>
+                        @foreach (var paciente in Model.Pacientes)
+                        {
+                            @if (paciente.estado == "Asignado" && paciente.id_enfermero == Int32.Parse(id))
+                            {
+                                <tr>
+                                    <td>@paciente.id_detalle_enfermeria</td>
+                                    <td><a href="/Views/Pokemon/Detalle?id=@paciente.Pokemon.id_pokemon">@paciente.Pokemon.nombre</a></td>
+                                    <td>@paciente.Pokemon.peso kg</td>
+                                    <td>@paciente.Entrenador.nombre</td>
+
+                                    <td class="text-center" width="20%">
+                                        <form asp-page-handler="Liberar" method="post">
+                                            <input type="hidden" name="id_detalle_enfermeria" value="@paciente.id_detalle_enfermeria" />
+                                            <button class="button py-2 text-white">
+                                                Dar de Alta
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            }
+                        }
                     </tbody>
                 </table>
             </div>
@@ -67,18 +78,27 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>002</td>
-                            <td><a href="">Ivysaur</a></td>
-                            <td>13.0 kg</td>
-                            <td>Serena</td>
+                        @foreach (var paciente in Model.Pacientes)
+                        {
+                            @if (paciente.estado == "Sin Asignar")
+                            {
+                                <tr>
+                                    <td>@paciente.id_detalle_enfermeria</td>
+                                    <td><a href="/Views/Pokemon/Detalle?id=@paciente.Pokemon.id_pokemon">@paciente.Pokemon.nombre</a></td>
+                                    <td>@paciente.Pokemon.peso kg</td>
+                                    <td>@paciente.Entrenador.nombre</td>
 
-                            <td class="text-center" width="20%">
-                                <button class="button py-2">
-                                    <a href="" type="button" class="text-white text-decoration-none">Asignar</a>
-                                </button>
-                            </td>
-                        </tr>
+                                    <td class="text-center" width="20%">
+                                        <form asp-page-handler="Asignar" method="post">
+                                            <input type="hidden" name="id_detalle_enfermeria" value="@paciente.id_detalle_enfermeria" />
+                                            <button class="button py-2 text-white">
+                                                Asignar
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            }
+                        }
                     </tbody>
                 </table>
             </div>

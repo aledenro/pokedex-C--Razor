@@ -18,5 +18,8 @@ namespace PokedexWeb.Models
 
         public ICollection<RetoModel> RetoRetador { get; set; }
         public ICollection<RetoModel> RetoContendiente { get; set; }
+
+        public ICollection<EnfermeriaModel> EnfermeriaEntrenador { get; set; }
+        public ICollection<EnfermeriaModel> EnfermeriaEnfermero { get; set; }
     }
 }
