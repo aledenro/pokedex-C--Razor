@@ -25,7 +25,7 @@ namespace PokedexWeb.Helpers
 
                 if (typesDb != null && typesDb.Count() <= 0)
                 {
-                    var dataTypes = await _pokeApiService.GetAllAbilities();
+                    var dataTypes = await _pokeApiService.GetAllTypes();
                     var types = dataTypes.RootElement.GetProperty("results");
 
                     foreach (var type in types.EnumerateArray())
@@ -34,7 +34,7 @@ namespace PokedexWeb.Helpers
 
                         string typeUrl = type.GetProperty("url").GetString();
 
-                        string idType = typeUrl.Replace("https://pokeapi.co/api/v2/ability/", "");
+                        string idType = typeUrl.Replace("https://pokeapi.co/api/v2/type/", "");
                         idType = idType.Replace("/", "");
 
                         TipoModel tipoModel = new TipoModel();
