@@ -33,5 +33,27 @@ namespace PokedexWeb.Services
 
 
         }
+
+        public bool deleteUsuarioRol(int idUsuario)
+        {
+            try
+            {
+                var registros = _dbContext.Usuario_Rol_G7.Where(ur => ur.id_usuario == idUsuario).ToList();
+
+                if (registros.Any())
+                {
+                    _dbContext.Usuario_Rol_G7.RemoveRange(registros);
+                    _dbContext.SaveChanges();
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+                return false;
+            }
+        }
+
     }
 }

@@ -16,6 +16,7 @@ namespace PokedexWeb.Pages.Views.Usuario
             _usuarioRolService = usuarioRolService;
         }
 
+        [BindProperty]
         public UsuarioModel Usuario { get; set; }
 
         [BindProperty]
@@ -50,21 +51,36 @@ namespace PokedexWeb.Pages.Views.Usuario
 
         public IActionResult OnPost()
         {
-            //_usuarioRolService.deleteUsuarioRol();
-
-            _usuarioRolService.insertUsuarioRol(Usuario.id_usuario, 1);
-
-            if (Admin)
+            
+            try
             {
-                _usuarioRolService.insertUsuarioRol(Usuario.id_usuario, 3);
-            }
+                _usuarioRolService.deleteUsuarioRol(Usuario.id_usuario);
 
-            if (Enfermero)
-            {
                 _usuarioRolService.insertUsuarioRol(Usuario.id_usuario, 1);
+
+                if (Admin)
+                {
+                    _usuarioRolService.insertUsuarioRol(Usuario.id_usuario, 3);
+                }
+
+                if (Enfermero)
+                {
+                    _usuarioRolService.insertUsuarioRol(Usuario.id_usuario, 1);
+
+                    
+                }
+
+                return RedirectToPage("/Views/Usuario/AdminUsers");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return Page();
             }
 
-            return RedirectToPage("/Views/Usuario/AdminUsers");
+
+
         }
+
     }
 }
