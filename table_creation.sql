@@ -5,7 +5,7 @@ CREATE DATABASE pokedex;
 USE pokedex;
 
 CREATE TABLE Rol_G7(
-	id_rol INT NOT NULL PRIMARY KEY,
+	id_rol INT NOT NULL PRIMARY KEY  AUTO_INCREMENT,
     rol VARCHAR(20) NOT NULL
 );
 
@@ -90,4 +90,8 @@ CREATE TABLE Detalle_Enfermeria_G7(
     FOREIGN KEY (id_enfermero) REFERENCES Usuario_G7(id_usuario)
 );
 
+INSERT  INTO Rol_G7(rol)
+VALUES('Entrenador'),
+('Admin'),
+('Enfermero');
 

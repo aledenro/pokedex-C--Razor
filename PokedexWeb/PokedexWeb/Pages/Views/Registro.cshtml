@@ -1,51 +1,49 @@
 ﻿@page
 @model RegistroModel
 @{
-   
+
     ViewData["Title"] = "Registro";
 
 }
 
-    <div class="row justify-content-center mb-6">
-        <h1 class=" fw-bold text-center my-3">Registro</h1>
-        <div class="col-6 m-4">
-            <form class="needs-validation mb-6" method="post">
+<div class="row justify-content-center mb-6">
+    <h1 class=" fw-bold text-center my-3">Registro</h1>
+    <div class="col-6 m-4">
+        <form class="needs-validation mb-6" method="post">
 
-                <div class="mb-3">
-                    <label for="name" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="name" name="name" required="">
-                    <div class="invalid-feedback">Por favor ingrese su nombre</div>
-                </div>
+            <div class="mb-3">
+                <label for="name" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required="">
+                <div class="invalid-feedback">Por favor ingrese su nombre</div>
+            </div>
 
-                <div class="mb-3">
-                    <label for="email" class="form-label">
-                        Email
-                        <span class="text-danger">*</span>
-                    </label>
-                    <input type="email" class="form-control" id="email" name="email" required="">
-                    <div class="invalid-feedback">Por favor ingrese su correo</div>
-                </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">
+                    Email
+                    <span class="text-danger">*</span>
+                </label>
+                <input type="email" class="form-control" id="username" name="username" required="">
+                <div class="invalid-feedback">Por favor ingrese su correo</div>
+            </div>
 
-                <div class="mb-3">
-                    <label for="password" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" id="password" name="password" required="">
-                    <div class="invalid-feedback">Por favor ingrese una contraseña</div>
-                </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="password" name="password" required="">
+                <div class="invalid-feedback">Por favor ingrese una contraseña</div>
+            </div>
 
-                <div class=" mb-4 text-center">
-                    <span class="text-center">
-                        ¿Ya tienes una cuenta?
-                        <a href="/Usuarios/Login" class="text-primary ">Inicia Sesion</a>
-                    </span>
-                </div>
+            <div class=" mb-4 text-center">
+                <span class="text-center">
+                    ¿Ya tienes una cuenta?
+                    <a href="/Usuarios/Login" class="text-primary ">Inicia Sesion</a>
+                </span>
+            </div>
 
-                <div class="d-grid">
-                    <button class="button-blue py-2 mb-3">
-                        <a href="/Views/Pokemon/Agregar" type="button" class="text-white text-decoration-none">Registrarse</a>
-                    </button>
-                </div>
+            <div class="d-grid">
+                <button class="button-blue py-2 mb-3 text-white text-decoration-none"> Registrarse</button>
+            </div>
 
-            </form>
-        </div>
+        </form>
     </div>
+</div>
 

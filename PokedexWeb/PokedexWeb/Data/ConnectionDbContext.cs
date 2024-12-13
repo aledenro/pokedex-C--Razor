@@ -12,6 +12,9 @@ namespace PokedexWeb.Data
         public DbSet<PokemonModel> Pokemon_G7 { get; set; }
         public DbSet<PokemonTipoModel> Pokemon_Tipo_G7 { get; set; }
         public DbSet<PokemonHabilidadModel> Pokemon_Habilidad_G7 { get; set; }
+        public DbSet<UsuarioModel> Usuario_G7 { get; set; }
+        public DbSet<RolModel> Rol_G7 { get; set; }
+        public DbSet<UsuarioRolModel> Usuario_Rol_G7 { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -38,6 +41,30 @@ namespace PokedexWeb.Data
             modelBuilder.Entity<PokemonTipoModel>().ToTable("Pokemon_Tipo_G7");
 
             modelBuilder.Entity<PokemonHabilidadModel>().ToTable("Pokemon_Habilidad_G7");
+
+            modelBuilder.Entity<UsuarioModel>()
+                 .ToTable("Usuario_G7")
+                 .HasKey(u => u.id_usuario);
+
+            // Configuración de la tabla Rol
+            modelBuilder.Entity<RolModel>()
+                .ToTable("Rol_G7")
+                .HasKey(r => r.id_rol);
+
+            // Configuración de la tabla UsuarioRol
+            modelBuilder.Entity<UsuarioRolModel>()
+                .ToTable("Usuario_Rol_G7")
+                .HasKey(ur => ur.id_usuario_rol);
+
+            modelBuilder.Entity<UsuarioRolModel>()
+                .HasOne(ur => ur.Usuario)
+                .WithMany(u => u.UsuarioRoles)
+                .HasForeignKey(ur => ur.id_usuario);
+
+            modelBuilder.Entity<UsuarioRolModel>()
+                .HasOne(ur => ur.Rol)
+                .WithMany(r => r.UsuarioRoles)
+                .HasForeignKey(ur => ur.id_rol);
 
         }
 
