@@ -39,6 +39,9 @@ namespace PokedexWeb.Pages.Views
             HttpContext.Session.SetString("Username", user.username);
             HttpContext.Session.SetString("UserId", user.id_usuario  + "");
 
+            var roles = string.Join(",", user.UsuarioRoles.Select(r => r.Rol.rol));
+            HttpContext.Session.SetString("UserRol", roles);
+
             return RedirectToPage("/Index");
         }
     }

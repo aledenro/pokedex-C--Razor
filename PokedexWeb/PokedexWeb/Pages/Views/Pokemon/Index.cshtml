@@ -2,14 +2,18 @@
 @model PokedexWeb.Pages.Views.Pokemon.IndexModel
 @{
     ViewData["Title"] = "Pokédex";
+     var rol = HttpContext.Session.GetString("UserRol");
 }
 
 <h1 class="text-center my-3">Pokédex</h1>
 <div class="mx-5">
     <div class="d-flex justify-content-end">
+        @if (rol == "Admin")
+                            {
         <button class="button-blue py-2 mb-3">
             <a href="/Views/Pokemon/Agregar" type="button" class="text-white text-decoration-none">Agregar Pokémon</a>
         </button>
+                            }
     </div>
     <div class="row">
         <div class="md-auto">
@@ -24,7 +28,10 @@
                             <th>Habilidad</th>
                             <th>Peso</th>
                             <th>Altura</th>
-                            <th>Acciones</th>
+                            @if (rol == "Admin")
+                            {
+                                <th>Acciones</th>
+                            }
                         </tr>
                     </thead>
                     <tbody>
@@ -51,11 +58,14 @@
                                 </td>
                                 <td>@pokemon.peso kg</td>
                                 <td>@pokemon.altura m</td>
+                                @if (rol == "Admin")
+                            {
                                 <td class="text-center">
                                     <button class="button icon">
                                         <a href="/Views/Pokemon/Editar?id=@pokemon.id_pokemon" type="button" class="text-white text-decoration-none" title="Modificar Pokemon"><i class="fa-solid fa-pen"></i></a>
                                     </button>
                                 </td>
+                            }
                             </tr>
                         }
                     </tbody>

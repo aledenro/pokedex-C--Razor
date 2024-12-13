@@ -3,6 +3,7 @@
 @{
     var username = HttpContextAccessor.HttpContext.Session.GetString("Username");
     var id = HttpContextAccessor.HttpContext.Session.GetString("UserId");
+    var rol = HttpContextAccessor.HttpContext.Session.GetString("UserRol");
     var loggedIn = !string.IsNullOrEmpty(username);
 }
 
@@ -42,15 +43,21 @@
                         </li>
                         @if (loggedIn)
                         {
+                            @if (rol == "Enfermero")
+                            {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/Views/Enfermeria/Index">Centro Pokémon</a>
                             </li>
+                            }
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/Views/Batalla/Batalla">Batallas</a>
                             </li>
+                            @if (rol == "Admin")
+                            {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/Views/Usuario/AdminUsers">Usuarios</a>
                             </li>
+                            }
                         }
                     </ul>
                     <div class="d-flex align-items-center">
