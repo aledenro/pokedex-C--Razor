@@ -11,6 +11,7 @@ namespace PokedexWeb.Data
         public DbSet<HabilidadModel> Habilidad_G7 { get; set; }
         public DbSet<PokemonModel> Pokemon_G7 { get; set; }
         public DbSet<PokemonTipoModel> Pokemon_Tipo_G7 { get; set; }
+        public DbSet<PokemonHabilidadModel> Pokemon_Habilidad_G7 { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -18,6 +19,7 @@ namespace PokedexWeb.Data
             modelBuilder.Entity<HabilidadModel>().ToTable("Habilidad_G7");
             modelBuilder.Entity<PokemonModel>().ToTable("Pokemon_G7");
             modelBuilder.Entity<PokemonTipoModel>().ToTable("Pokemon_Tipo_G7");
+            modelBuilder.Entity<PokemonHabilidadModel>().ToTable("Pokemon_Habilidad_G7");
         }
 
     }

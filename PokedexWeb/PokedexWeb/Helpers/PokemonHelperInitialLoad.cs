@@ -9,12 +9,14 @@ namespace PokedexWeb.Helpers
         private readonly PokeApiService _pokeApiService;
         private readonly PokemonService _pokemonService;
         private readonly PokemonTipoService _pokemonTipoService;
+        private readonly  PokemonHabilidadService _pokemonHabilidadService;
 
-        public PokemonHelperInitialLoad(PokeApiService pokeApiService, PokemonService pokemonService, PokemonTipoService pokemonTipoService)
+        public PokemonHelperInitialLoad(PokeApiService pokeApiService, PokemonService pokemonService, PokemonTipoService pokemonTipoService, PokemonHabilidadService pokemonHabilidadService)
         {
             _pokeApiService = pokeApiService;
             _pokemonService = pokemonService;
             _pokemonTipoService = pokemonTipoService;
+            _pokemonHabilidadService = pokemonHabilidadService;
         }
 
 
@@ -85,7 +87,23 @@ namespace PokedexWeb.Helpers
                                         _pokemonTipoService.AddPokemonTipo(pokemonTipo);
                                     }
 
-                                    //_pokemonTipoService.AddPokemonTipo(Pokemon);
+                                    var habilidades = detailPokemon.RootElement.GetProperty("abilities").EnumerateArray();
+
+                                    foreach (var habilidad in habilidades)
+                                    {
+                                        string habilidadNombre = habilidad.GetProperty("ability").GetProperty("name").GetString();
+                                        string urlAbility = habilidad.GetProperty("ability").GetProperty("url").GetString();
+
+
+                                        string idAbility = urlAbility.Replace("https://pokeapi.co/api/v2/ability/", "");
+                                        idAbility = idAbility.Replace("/", "");
+
+                                        PokemonHabilidadModel pokemonHabilidad = new PokemonHabilidadModel();
+                                        pokemonHabilidad.id_pokemon = id;
+                                        pokemonHabilidad.id_habilidad = Int32.Parse(idAbility);
+
+                                        _pokemonHabilidadService.AddPokemonHabilidad(pokemonHabilidad);
+                                    }
                                 }
                             }
                         }
@@ -97,11 +115,6 @@ namespace PokedexWeb.Helpers
                 System.Diagnostics.Debug.WriteLine(ex.Message);
                 return;
             }
-        }
-
-        private void addTipoPokemon(int idPokemon, int idTipo)
-        {
-            
         }
     }
 }

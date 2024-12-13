@@ -71,7 +71,7 @@ CREATE TABLE Pokemon_Tipo_G7(
 );
 
 CREATE TABLE Pokemon_Habilidad_G7(
-	id_pokemon_habilidad INT NOT NULL PRIMARY KEY,
+	id_pokemon_habilidad INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     id_pokemon INT NOT NULL,
 	id_habilidad INT NOT NULL, 
     FOREIGN KEY (id_pokemon) REFERENCES Pokemon_G7(id_pokemon),
