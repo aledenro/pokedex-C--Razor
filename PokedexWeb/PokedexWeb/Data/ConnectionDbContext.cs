@@ -17,6 +17,7 @@ namespace PokedexWeb.Data
         public DbSet<UsuarioRolModel> Usuario_Rol_G7 { get; set; }
         public DbSet<RetoModel> Reto_G7 { get; set; }
         public DbSet<EnfermeriaModel> Enfermeria_G7 { get; set; }
+        public DbSet<UsuarioPokemonModel> UsuarioPokemon_G7 { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -98,6 +99,20 @@ namespace PokedexWeb.Data
                 .HasOne(d => d.Pokemon)
                 .WithMany(p => p.PokemonEnfermeria)
                 .HasForeignKey(d => d.id_pokemon);
+
+            modelBuilder.Entity<UsuarioPokemonModel>()
+                .ToTable("Usuario_Pokemon_G7")
+                .HasKey(up => up.id_usuario_pokemon);
+
+            modelBuilder.Entity<UsuarioPokemonModel>()
+                .HasOne(up => up.pokemon)
+                .WithMany(p => p.PokemonUsuario)
+                .HasForeignKey(up => up.id_pokemon);
+
+            modelBuilder.Entity<UsuarioPokemonModel>()
+                .HasOne(up => up.usuario)
+                .WithMany(u => u.UsuarioPokemons)
+                .HasForeignKey(up => up.id_usuario);
         }
 
     }

@@ -5,7 +5,7 @@ CREATE DATABASE pokedex;
 USE pokedex;
 
 CREATE TABLE Rol_G7(
-	id_rol INT NOT NULL PRIMARY KEY  AUTO_INCREMENT,
+	id_rol INT NOT NULL PRIMARY KEY,
     rol VARCHAR(20) NOT NULL
 );
 
@@ -105,8 +105,14 @@ INSERT INTO Usuario_G7(username, password, estado, nombre)
 VALUES	('aledenro@gmail.com', '1234', true, 'Alejandro Denver'),
 ('test@test.com', '1234', true, 'test');
 
-INSERT  INTO Rol_G7(rol)
-VALUES('Entrenador'),
-('Admin'),
-('Enfermero');
+INSERT  INTO Rol_G7(id_rol, rol)
+VALUES(1, 'Entrenador'),
+(3, 'Admin'),
+(2, 'Enfermero');
+
+INSERT INTO Usuario_Rol_G7(id_usuario, id_rol)
+VALUES (1, 1),
+(1, 3),
+(2, 1),
+(2, 3);
 

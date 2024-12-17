@@ -14,6 +14,7 @@ namespace PokedexWeb.Models
         public ICollection<PokemonTipoModel> PokemonTipos { get; set; }
         public ICollection<PokemonHabilidadModel> PokemonHabilidades { get; set; }
         public ICollection<EnfermeriaModel> PokemonEnfermeria { get; set; }
+        public ICollection<UsuarioPokemonModel> PokemonUsuario { get; set; }
 
     }
 }

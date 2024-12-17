@@ -43,7 +43,7 @@
                         </li>
                         @if (loggedIn)
                         {
-                            @if (rol == "Enfermero")
+                            @if (rol.Contains("Enfermero") || rol.Contains("Admin"))
                             {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/Views/Enfermeria/Index">Centro Pokémon</a>
@@ -52,7 +52,7 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/Views/Batalla/Batalla">Batallas</a>
                             </li>
-                            @if (rol == "Admin")
+                            @if (rol.Contains("Admin"))
                             {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/Views/Usuario/AdminUsers">Usuarios</a>
