@@ -3,52 +3,35 @@
 @{
 
 
-
-    <div class="row text-center mb-2">
-        <h1>Chats</h1>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-3 p-3">
-            <input type="text" class="form-control mb-3" placeholder="Burcar...">
-            <div class="chat-list align-items-start text-start">
-                <div class="list-group" id="contactList">
-                    <button class="list-group-item list-group-item-action">
-                        <img src="https://archives.bulbagarden.net/media/upload/thumb/b/b1/Misty_AG.png/220px-Misty_AG.png"><span> Misty</span>
-                    </button>
-                    <button class="list-group-item list-group-item-action">
-                        <img src="https://static.wikitide.net/greatcharacterswiki/a/a7/Brock_BW.png" /><span> Brock</span>
-                    </button>
-                    <button class="list-group-item list-group-item-action">
-                        <img src="https://images.wikidexcdn.net/mwuploads/wikidex/c/c9/latest/20090208125603/EP410_Max.png"><span> Max</span>
-                    </button>
-                    <button class="list-group-item list-group-item-action">
-                        <img src="https://images.wikidexcdn.net/mwuploads/wikidex/thumb/1/1e/latest/20150324195546/EP868_Serena.png/200px-EP868_Serena.png"><span> Serena</span>
-                    </button>
-
-                </div>
-            </div>
-        </div>
-        <div class="col-7 py-3 d-flex flex-column" style="height: 400px;">
-            <div class="chat-box d-flex flex-column flex-grow-1 overflow-auto mb-1" id="chatBox">
-                <div class="message received">Hello! How are you?</div>
-                <div class="message sent">I'm good, thanks! How about you?</div>
-                <div class="message received">Doing great. Just wanted to catch up.</div>
-                <div class="message sent">Sure thing! Let me know what's on your mind.</div>
-                <div class="message sent">Sure thing! Let me know what's on your mind.</div>
-                <div class="message sent">Sure thing! Let me know what's on your mind.</div>
-                <div class="message received">Sure thing! Let me know what's on your mind.</div>
-                <div class="message sent">Sure thing! Let me know what's on your mind.</div>
-                <div class="message sent">Sure thing! Let me know what's on your mind.</div>
-                <div class="message sent">Sure thing! Let me know what's on your mind.</div>
-            </div>
-
-            <form class="d-flex mt-auto">
-                <input type="text" class="form-control me-2" placeholder="...">
-                <button class="button-red text-white" type="submit">Enviar</button>
-            </form>
-        </div>
-    </div>
-
-
-
 }
+
+
+<button class="button-blue py-2 mb-3">
+    <a href="/Views/Usuario/Contactos" type="button" class="text-white text-decoration-none">Volver</a>
+</button>
+<div class="row text-center mb-2">
+    <h1>Chat con</h1>
+    <h3 class="text-center">Usuario</h3>
+</div>
+<div class="row justify-content-center">
+    
+    <div class="col-7 py-3 d-flex flex-column" style="height: 400px;">
+        <div class="chat-box d-flex flex-column flex-grow-1 overflow-auto mb-1" id="chatBox">
+            <div class="message received" id="received">Hello! How are you?</div>
+            <div class="message sent" id="sent">I'm good, thanks! How about you?</div>
+            <div class="message received">Doing great. Just wanted to catch up.</div>
+            <div class="message sent">Sure thing! Let me know what's on your mind.</div>
+            <div class="message sent">Sure thing! Let me know what's on your mind.</div>
+            <div class="message sent">Sure thing! Let me know what's on your mind.</div>
+            <div class="message received">Sure thing! Let me know what's on your mind.</div>
+            <div class="message sent">Sure thing! Let me know what's on your mind.</div>
+            <div class="message sent">Sure thing! Let me know what's on your mind.</div>
+            <div class="message sent">Sure thing! Let me know what's on your mind.</div>
+        </div>
+
+        <form class="d-flex mt-auto">
+            <input type="text" class="form-control me-2" placeholder="...">
+            <button class="button-red text-white" type="submit">Enviar</button>
+        </form>
+    </div>
+</div>
