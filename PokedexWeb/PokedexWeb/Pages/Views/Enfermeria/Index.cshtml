@@ -43,6 +43,8 @@
                                     <td class="text-center" width="20%">
                                         <form asp-page-handler="Liberar" method="post">
                                             <input type="hidden" name="id_detalle_enfermeria" value="@paciente.id_detalle_enfermeria" />
+                                            <input type="hidden" name="id_pokemon" value="@paciente.id_pokemon" />
+                                            <input type="hidden" name="id_entrenador" value="@paciente.id_entrenador" />
                                             <button class="button py-2 text-white">
                                                 Dar de Alta
                                             </button>

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Org.BouncyCastle.Bcpg.OpenPgp;
 using PokedexWeb.Data;
 using PokedexWeb.Models;
 
@@ -54,6 +55,27 @@ namespace PokedexWeb.Services
                 }
 
                 detalle.estado = "De Alta";
+                _dbContext.SaveChanges();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+                return false;
+            }
+        }
+
+        public bool AgregarPaciente(int id_pokemon, int id_entrenador)
+        {
+            try
+            {
+                EnfermeriaModel enfermeria = new EnfermeriaModel();
+                enfermeria.id_entrenador = id_entrenador;
+                enfermeria.estado = "Sin Asignar";
+                enfermeria.id_pokemon = id_pokemon;
+
+                _dbContext.Enfermeria_G7.Add(enfermeria);
                 _dbContext.SaveChanges();
 
                 return true;

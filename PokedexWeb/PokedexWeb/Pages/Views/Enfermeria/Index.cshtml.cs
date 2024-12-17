@@ -9,11 +9,13 @@ namespace PokedexWeb.Pages.Views.Enfermeria
     {
         private readonly EnfermeriaService _enfermeriaService;
         private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly UsuarioPokemonService _usuarioPokemonService;
 
-        public IndexModel(EnfermeriaService enfermeriaService, IHttpContextAccessor httpContextAccessor)
+        public IndexModel(EnfermeriaService enfermeriaService, IHttpContextAccessor httpContextAccessor, UsuarioPokemonService usuarioPokemonService)
         {
             _enfermeriaService = enfermeriaService;
             _httpContextAccessor = httpContextAccessor;
+            _usuarioPokemonService = usuarioPokemonService;
         }
 
         public IEnumerable<EnfermeriaModel> Pacientes { get; set; }
@@ -39,7 +41,7 @@ namespace PokedexWeb.Pages.Views.Enfermeria
             return RedirectToPage();
         }
 
-        public IActionResult OnPostLiberar(int id_detalle_enfermeria)
+        public IActionResult OnPostLiberar(int id_detalle_enfermeria,  int id_pokemon, int id_entrenador)
         {
             bool liberado = _enfermeriaService.Liberar(id_detalle_enfermeria);
 
@@ -47,6 +49,8 @@ namespace PokedexWeb.Pages.Views.Enfermeria
             {
                 Message = "Error al dar de alta el pokemon.";
             }
+
+            _usuarioPokemonService.cambiarEstadoEnfermeria(id_entrenador, id_pokemon, false);
 
             return RedirectToPage();
         }

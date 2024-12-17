@@ -7,69 +7,60 @@
 
 <h1 class="text-center mt-3 mb-4">Mis Pokémon</h1>
 <div class="row">
-    
+
     <div class="md-auto">
         <div class="d-flex justify-content-end">
             <button class="button-blue py-2 mb-3">
                 <a href="/Views/Usuario/Agregar" type="button" class="text-white text-decoration-none">Agregar Pokémon</a>
             </button>
         </div>
-        
+
         <div class="table-responsive mx-5">
             <table class="table-style align-middle">
                 <thead>
                     <tr>
                         <th></th>
                         <th>#</th>
-                        <th>Nombre</th>
-                        <th>Tipo</th>
-                        <th>Habilidad</th>
-                        <th>Peso</th>
-                        <th>Altura</th>
-                        <th>Equipo</th>
+                        <th>Nombre Asignado</th>
+                        <th>Especie</th>
+                        <th>Enfermeria</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>
-                            <img class="text-center"src="https://img.pokemondb.net/sprites/black-white/anim/normal/bulbasaur.gif" alt="Bulbasaur">
-                        </td>
-                        <td>001</td>
-                        <td><a href="/Views/Pokemon/Detalle">Bulbasaur</a></td>
-                        <td>
-                            <p>
-                                <span class="badge text-bg-success rounded-pill" id="planta">Planta</span>
-                            </p>
-                            <p>
-                                <span class="badge text-bg-success rounded-pill" id="veneno">Veneno</span>
-                            </p>
-                        </td>
-                        <td>Espesura</td>
-                        <td>6.9 kg</td>
-                        <td>0.7 m</td>
-                        <td>
-                            <p>
-                                <span class="badge text-bg-success rounded-pill" id="planta">Si</span>
-                            </p>
-                        </td>
-                        <td class="text-center">
-                            <button class="button icon">
-                                <a href="" type="button" class="text-white text-decoration-none" title="Agregar a mi equipo"><i class="fa-solid fa-plus"></i></a>
-                            </button>
-                            <button class="button icon">
-                                <a href="/Views/Pokemon/Eliminar" type="button" class="text-white text-decoration-none" title="Llevar al Centro Pokemon"><i class="fa-solid fa-user-doctor"></i></a>
-                            </button>
-                            <button class="button icon">
-                                <a href="/Views/Pokemon/Editar" type="button" class="text-white text-decoration-none" title="Modificar Pokemon"><i class="fa-solid fa-pen"></i></a>
-                            </button>
-                            <button class="button icon">
-                                <a href="/Views/Pokemon/Eliminar" type="button" class="text-white text-decoration-none" title="Liberar Pokemon"><i class="fa-solid fa-trash"></i></a>
-                            </button>
-                            
-                        </td>
-                    </tr>
-
+                    @foreach (var pokemonUsuario in Model.usuarioPokemons)
+                    {
+                        <tr>
+                            <td>
+                                <img class="text-center"src="@pokemonUsuario.pokemon.foto" alt="Bulbasaur">
+                            </td>
+                            <td>@pokemonUsuario.id_usuario_pokemon</td>
+                            <td>@pokemonUsuario.nombre</td>
+                            <td><a href="/Views/Pokemon/Detalle?id=@pokemonUsuario.pokemon.id_pokemon">@pokemonUsuario.pokemon.nombre</a></td>
+                            <td>@pokemonUsuario.enfermeria</td>
+                            <td class="text-center">
+                                @if (!@pokemonUsuario.enfermeria)
+                                {
+                                    <form asp-page-handler="Enfermeria" method="post">
+                                        <button class="button icon text-white" title="Llevar al Centro Pokemon">
+                                            <input type="hidden" name="id_pokemon" id="id_pokemon" value="@pokemonUsuario.pokemon.id_pokemon" />
+                                            <input type="hidden" name="id_usuario_pokemon" id="id_usuario_pokemon" value="@pokemonUsuario.id_usuario_pokemon" />
+                                            <i class="fa-solid fa-user-doctor"></i>
+                                        </button>
+                                    </form>
+                                }
+                                <button class="button icon">
+                                    <a href="/Views/Usuario/EditarPokemon?id=@pokemonUsuario.id_usuario_pokemon" type="button" class="text-white text-decoration-none" title="Modificar Pokemon"><i class="fa-solid fa-pen"></i></a>
+                                </button>
+                                <form asp-page-handler="Quitar" method="post">
+                                    <input type="hidden" name="id_usuario_pokemon" id="id_usuario_pokemon" value="@pokemonUsuario.id_usuario_pokemon" />
+                                    <button class="button icon text-white">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
                 </tbody>
             </table>
         </div>

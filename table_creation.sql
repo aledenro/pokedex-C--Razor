@@ -85,7 +85,7 @@ CREATE TABLE Detalle_Enfermeria_G7(
     id_entrenador INT NOT NULL,
     id_pokemon INT NOT NULL,
     id_enfermero INT,
-    fecha DATE NOT NULL,
+    fecha DATE NOT NULL DEFAULT( CURDATE()),
     Estado VARCHAR(25) NOT NULL,
     FOREIGN KEY (id_entrenador) REFERENCES Usuario_G7(id_usuario),
     FOREIGN KEY (id_pokemon) REFERENCES Pokemon_G7(id_pokemon),
@@ -97,6 +97,7 @@ CREATE TABLE Usuario_Pokemon_G7(
     id_usuario INT NOT NULL,
 	id_pokemon INT NOT NULL,
     nombre VARCHAR(50) NOT NULL,
+    enfermeria bool,
     FOREIGN KEY (id_usuario) REFERENCES Usuario_G7(id_usuario),
     FOREIGN KEY (id_pokemon) REFERENCES Pokemon_G7(id_pokemon)
 );

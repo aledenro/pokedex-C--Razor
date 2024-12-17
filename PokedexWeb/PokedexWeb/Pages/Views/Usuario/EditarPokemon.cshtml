@@ -1,33 +1,27 @@
 ﻿@page
-@model PokedexWeb.Pages.Views.Usuario.AgregarModel
+@model PokedexWeb.Pages.Views.Usuario.EditarPokemonModel
 @{
 }
-
-<h1 class="text-center my-3">Agregar a mi Equipo</h1>
+<h1 class="text-center my-3">Editar mi Pokemon</h1>
 <div class="mx-5">
     <div class="row  d-flex justify-content-center">
         <form class="mt-4 col-10" method="post">
-            <select class="form-select mb-3" id="IdPokemon" name="IdPokemon">
-                @foreach (var pokemon in Model.Pokemones)
-                {
-                    <option value="@pokemon.id_pokemon">@pokemon.nombre</option>
-                }
-            </select>
-
+            <input type="hidden" name="id_usuario_pokemon" id="id_usuario_pokemon" value="@Model.id_usuario_pokemon" />
             <div class="mb-3">
                 <label for="Nombre" class="form-label">
                     Nombre Pokemon
                 </label>
-                <input type="text" class="form-control" id="Nombre" name="Nombre" required>
+                <input type="text" class="form-control" id="Nombre" name="Nombre" required value="@Model.Nombre">
             </div>
             <div class="d-flex justify-content-end">
                 <button class="button-blue text-white py-2 mb-3" type="submit">
                     Confirmar
                 </button>
             </div>
-            @if (Model.Message != null) {
+            @if (Model.Message != null)
+            {
                 <div id="warning" class="alert alert-warning" role="alert">
-                   @Model.Message
+                    @Model.Message
                 </div>
             }
 
