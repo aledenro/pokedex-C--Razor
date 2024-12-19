@@ -22,5 +22,7 @@ namespace PokedexWeb.Models
         public ICollection<EnfermeriaModel> EnfermeriaEntrenador { get; set; }
         public ICollection<EnfermeriaModel> EnfermeriaEnfermero { get; set; }
         public ICollection<UsuarioPokemonModel> UsuarioPokemons { get; set; }
+        public ICollection<ChatModel> EnviaChat { get; set; }
+        public ICollection<ChatModel> RecibeChat { get; set; }
     }
 }

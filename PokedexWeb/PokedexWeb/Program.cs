@@ -22,6 +22,7 @@ builder.Services.AddScoped<RetoService>();
 builder.Services.AddScoped<EnfermeriaService>();
 builder.Services.AddScoped<RolUsuarioService>();
 builder.Services.AddScoped<UsuarioPokemonService>();
+builder.Services.AddScoped<ChatService>();
 
 builder.Services.AddScoped<TipoHelperIntialLoad>();
 builder.Services.AddScoped<HabilidadHelperInitialLoad>();

@@ -18,6 +18,8 @@ namespace PokedexWeb.Data
         public DbSet<RetoModel> Reto_G7 { get; set; }
         public DbSet<EnfermeriaModel> Enfermeria_G7 { get; set; }
         public DbSet<UsuarioPokemonModel> UsuarioPokemon_G7 { get; set; }
+        public DbSet<ChatModel> Chat_G7 { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -113,6 +115,20 @@ namespace PokedexWeb.Data
                 .HasOne(up => up.usuario)
                 .WithMany(u => u.UsuarioPokemons)
                 .HasForeignKey(up => up.id_usuario);
+
+            modelBuilder.Entity<ChatModel>()
+                .ToTable("Chat_G7")
+                .HasKey(c => c.id_chat);
+
+            modelBuilder.Entity<ChatModel>()
+                .HasOne(c  => c.Usuario1)
+                .WithMany(u => u.EnviaChat)
+                .HasForeignKey(c => c.id_usuario1);
+
+            modelBuilder.Entity<ChatModel>()
+                .HasOne(c => c.Usuario2)
+                .WithMany(u => u.RecibeChat)
+                .HasForeignKey(c => c.id_usuario2);
         }
 
     }

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace PokedexWeb.Pages.Views.Usuario
 {
-    public class ChatModel : PageModel
+    public class ChatViewModel : PageModel
     {
         public void OnGet()
         {

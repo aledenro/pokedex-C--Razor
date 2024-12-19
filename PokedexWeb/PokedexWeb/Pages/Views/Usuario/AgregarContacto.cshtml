@@ -1,0 +1,36 @@
+﻿@page
+@model PokedexWeb.Pages.Views.Usuario.AgregarContactoModel
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    int id = int.Parse(HttpContextAccessor.HttpContext.Session.GetString("UserId"));
+}
+<h1 class="text-center my-3">Agregar Contacto</h1>
+<div class="mx-5">
+    <div class="row  d-flex justify-content-center">
+        <form class="mt-4 col-10" method="post">
+            <div class="mb-3">
+                <input type="number" class="form-control" id="id_usuario" name="id_usuario" required readonly hidden value="@Model.id_usuario">
+            </div>
+            <select class="form-select mb-3" id="id_contacto" name="id_contacto">
+                @foreach (var usuario in Model.Usuarios)
+                {
+                    if(!Model.Chats.Contains(usuario.id_usuario) && usuario.id_usuario != id){
+                        <option value="@usuario.id_usuario">@usuario.nombre</option>
+                    }
+                }
+            </select>
+            <div class="d-flex justify-content-end">
+                <button class="button-blue text-white py-2 mb-3" type="submit">
+                    Enviar Solicitud
+                </button>
+            </div>
+            @if (Model.Message != null)
+            {
+                <div id="warning" class="alert alert-warning" role="alert">
+                    @Model.Message
+                </div>
+            }
+
+        </form>
+    </div>
+</div>

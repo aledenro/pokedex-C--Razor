@@ -37,13 +37,21 @@ CREATE TABLE Reto_G7(
     FOREIGN KEY (id_contendiente) REFERENCES Usuario_G7(id_usuario)
 );
 
+CREATE TABLE Chat_G7(
+	id_chat INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    id_usuario1 INT NOT NULL,
+    id_usuario2 INT NOT NULL,
+    FOREIGN KEY (id_usuario1) REFERENCES Usuario_G7(id_usuario),
+    FOREIGN KEY (id_usuario2) REFERENCES Usuario_G7(id_usuario)
+);
+
 CREATE TABLE Mensaje_G7(
 	id_mensaje INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    id_chat INT NOT NULL,
     id_envia INT NOT NULL,
-    id_receptor INT NOT NULL,
-    Estado TEXT NOT NULL,
+    mensaje TEXT NOT NULL,
     FOREIGN KEY (id_envia) REFERENCES Usuario_G7(id_usuario),
-    FOREIGN KEY (id_receptor) REFERENCES Usuario_G7(id_usuario)
+    FOREIGN KEY (id_chat) REFERENCES Chat_G7(id_chat)
 );
 
 CREATE TABLE Pokemon_G7(
