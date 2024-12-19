@@ -1,4 +1,5 @@
-﻿using PokedexWeb.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using PokedexWeb.Data;
 using PokedexWeb.Models;
 
 namespace PokedexWeb.Services
@@ -14,7 +15,7 @@ namespace PokedexWeb.Services
 
         public IEnumerable<ChatModel> GetChats(int id)
         {
-            return _dbContext.Chat_G7.Where(c => c.id_usuario1 == id || c.id_usuario2 == id).ToList();
+            return _dbContext.Chat_G7.Where(c => c.id_usuario1 == id || c.id_usuario2 == id).Include(c => c.Usuario1).Include(c => c.Usuario2).ToList();
         }
 
         public bool AddChat(int id_usuario1, int usuario2)

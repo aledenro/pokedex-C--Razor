@@ -1,6 +1,8 @@
 ﻿@page
 @model PokedexWeb.Pages.Views.Usuario.ContactosModel
+@inject IHttpContextAccessor HttpContextAccessor
 @{
+   int id = int.Parse(HttpContextAccessor.HttpContext.Session.GetString("UserId"));
 }
 
 <div class="row text-center mb-2">
@@ -16,13 +18,20 @@
     <div class="col-6 p-3">
         <div class="chat-list align-items-start text-start">
             <div class="list-group" id="contactList">
-
-                <a href="/Views/Usuario/Chat" class="text-decoration-none text-black">
-                    <button class="list-group-item list-group-item-action">
-                        <img src="https://archives.bulbagarden.net/media/upload/thumb/b/b1/Misty_AG.png/220px-Misty_AG.png"><span> Misty</span>
-                    </button>
-                </a>
-
+                @foreach (var chat in Model.chats)
+                {
+                    <a href="/Views/Usuario/Chat?id=@chat.id_chat" class="text-decoration-none text-black">
+                        @if(chat.id_usuario1 != id){
+                            <button class="list-group-item list-group-item-action">
+                                <img src="https://archives.bulbagarden.net/media/upload/thumb/b/b1/Misty_AG.png/220px-Misty_AG.png"><span> @chat.Usuario1.nombre</span>
+                            </button>
+                        }else{
+                            <button class="list-group-item list-group-item-action">
+                                <img src="https://archives.bulbagarden.net/media/upload/thumb/b/b1/Misty_AG.png/220px-Misty_AG.png"><span> @chat.Usuario2.nombre</span>
+                            </button>
+                        }
+                    </a>
+                }
             </div>
         </div>
     </div>
