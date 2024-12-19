@@ -23,10 +23,10 @@ namespace PokedexWeb.Pages.Views.Usuario
         public RolModel Rol { get; set; }
 
         [BindProperty]
-        public bool Enfermero { get; set; }
+        public bool Enfermero { get; set; } = false;
 
         [BindProperty]
-        public bool Admin {  get; set; }
+        public bool Admin { get; set; } = false;
 
 
 
@@ -65,10 +65,13 @@ namespace PokedexWeb.Pages.Views.Usuario
 
                 if (Enfermero)
                 {
-                    _usuarioRolService.insertUsuarioRol(Usuario.id_usuario, 1);
-
-                    
+                    _usuarioRolService.insertUsuarioRol(Usuario.id_usuario, 2);
                 }
+
+                var user = _usuarioService.GetUsuarioById(Usuario.id_usuario);
+
+                var roles = string.Join(",", user.UsuarioRoles.Select(r => r.Rol.rol));
+                HttpContext.Session.SetString("UserRol", roles);
 
                 return RedirectToPage("/Views/Usuario/AdminUsers");
             }
