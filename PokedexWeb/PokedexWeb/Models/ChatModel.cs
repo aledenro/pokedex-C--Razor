@@ -10,5 +10,6 @@ namespace PokedexWeb.Models
 
         public UsuarioModel Usuario1 { get; set; }
         public UsuarioModel Usuario2 { get; set; }
+        public ICollection<MensajeModel> MensajesChat { get; set; }
     }
 }

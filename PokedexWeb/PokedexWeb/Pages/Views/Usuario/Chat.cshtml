@@ -1,8 +1,8 @@
 ﻿@page
 @model PokedexWeb.Pages.Views.Usuario.ChatViewModel
+@inject IHttpContextAccessor HttpContextAccessor
 @{
-
-
+    int id = int.Parse(HttpContextAccessor.HttpContext.Session.GetString("UserId"));
 }
 
 
@@ -11,26 +11,28 @@
 </button>
 <div class="row text-center mb-2">
     <h1>Chat con</h1>
-    <h3 class="text-center">Usuario</h3>
+    @if(Model.Chat.id_usuario1 != id){
+        <h3 class="text-center">@Model.Chat.Usuario1.nombre</h3>
+    }else{
+        <h3 class="text-center">@Model.Chat.Usuario2.nombre</h3>
+    }
 </div>
 <div class="row justify-content-center">
     
     <div class="col-7 py-3 d-flex flex-column" style="height: 400px;">
         <div class="chat-box d-flex flex-column flex-grow-1 overflow-auto mb-1" id="chatBox">
-            <div class="message received" id="received">Hello! How are you?</div>
-            <div class="message sent" id="sent">I'm good, thanks! How about you?</div>
-            <div class="message received">Doing great. Just wanted to catch up.</div>
-            <div class="message sent">Sure thing! Let me know what's on your mind.</div>
-            <div class="message sent">Sure thing! Let me know what's on your mind.</div>
-            <div class="message sent">Sure thing! Let me know what's on your mind.</div>
-            <div class="message received">Sure thing! Let me know what's on your mind.</div>
-            <div class="message sent">Sure thing! Let me know what's on your mind.</div>
-            <div class="message sent">Sure thing! Let me know what's on your mind.</div>
-            <div class="message sent">Sure thing! Let me know what's on your mind.</div>
+            @foreach(var mensaje in Model.Mensajes){
+                @if(mensaje.id_envia == id){
+                    <div class="message sent" id="@mensaje.id_mensaje">@mensaje.mensaje</div>
+                }else{
+                    <div class="message received" id="@mensaje.id_mensaje">@mensaje.mensaje</div>
+                }
+            }
         </div>
 
-        <form class="d-flex mt-auto">
-            <input type="text" class="form-control me-2" placeholder="...">
+        <form class="d-flex mt-auto" method="post">
+            <input type="number" class="form-control" id="IdChat" name="IdChat" required readonly hidden value="@Model.IdChat">
+            <input type="text" class="form-control me-2" placeholder="..." id="Mensaje" name="Mensaje">
             <button class="button-red text-white" type="submit">Enviar</button>
         </form>
     </div>

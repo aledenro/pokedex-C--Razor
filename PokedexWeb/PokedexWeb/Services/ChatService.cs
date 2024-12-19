@@ -36,5 +36,9 @@ namespace PokedexWeb.Services
                 return false;
             }
         }
+
+        public ChatModel GetChat(int id) {
+            return _dbContext.Chat_G7.Where(c => c.id_chat == id).Include(c => c.Usuario1).Include(c => c.Usuario2).Single();
+        }
     }
 }
